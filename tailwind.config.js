@@ -3,14 +3,17 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {colors: {
-      primary: '#DDBF5F',
+      primary: '#c4a230',
       secondary: '#F1E27B',
       neutral: '#B7852E',
+      
     },
     fontFamily: {
-      poppins: ["Poppins"],
-      walton:["Walton","sans-serif"],
-      ubuntu:["Ubuntu"]
+      'Poppins': ["Poppins",'sans-serif'],
+    
+      'ubuntu':["Ubuntu"],
+      'embed':["Exo 2"],
+      'Protest':["Protest Guerrilla","sans-serif"],
     },
   },
   },
