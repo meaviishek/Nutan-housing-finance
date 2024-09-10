@@ -8,7 +8,7 @@ module.exports = {
       neutral: '#B7852E',
     },
     fontFamily: {
-      poppins: ["Poppins", "sans-serif"],
+      poppins: ["Poppins"],
       walton:["Walton","sans-serif"],
       ubuntu:["Ubuntu"]
     },
