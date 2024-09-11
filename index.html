@@ -127,7 +127,7 @@
     
     <div class="max-w-full mt-16">
 
-      <video autoplay muted loop id="myVideo" class="object-cover h-96 w-full">
+      <video autoplay muted loop id="myVideo" class="object-cover h-[14rem] w-full">
         <source src="./src/img/videoplayback.mov"  type="video/mp4">
       </video>
   
@@ -480,13 +480,27 @@
       <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
       <form>
         <div class="mb-4">
-          <label class="block text-gray-700">Name</label>
+          <label class="block text-gray-700">Name*</label>
           <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your name" />
         </div>
         <div class="mb-4">
-          <label class="block text-gray-700">Email</label>
+          <label class="block text-gray-700">Email*</label>
           <input type="email" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your email" />
         </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Phone Number*</label>
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your phone Number" />
+        </div>
+        <div class="mb-4">
+          <label for="options" class="block  font-medium text-gray-600">Select Role</label>
+        <select id="options" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="option1">Advisor</option>
+           
+        </select>
+        </div>
+
+
         <div class="mb-4">
           <label class="block text-gray-700">Password</label>
           <input type="password" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Create a password" />
