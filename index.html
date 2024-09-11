@@ -246,6 +246,9 @@
   <h3 class="text-xl font-semibold text-primary">Schools</h3>
 </div>
 </div>
+<div class="text-center ">
+  <button id="open-popup2" class="bg-primary text-white py-2 px-4 rounded hover:bg-yellow-500">Know More</button>
+</div>
 </div>
 
 
@@ -515,6 +518,7 @@ const modalform=document.getElementById('modal1')
 const closeModalform = document.getElementById('close-form');
 const openpopup = document.getElementById('open-popup')
 const openpopup1 = document.getElementById('open-popup1')
+const openpopup2 = document.getElementById('open-popup2')
 const testimonials=document.querySelectorAll('.testimonial')
 const modal = document.getElementById('modal');
 const modalBg = document.getElementById('modal-background');
@@ -537,6 +541,12 @@ openpopup1.addEventListener('click', () => {
   modalform.classList.add('flex');
   modalBg.classList.remove('hidden');
 });
+openpopup2.addEventListener('click', () => {
+  modalform.classList.remove('hidden');
+  modalform.classList.add('flex');
+  modalBg.classList.remove('hidden');
+});
+
 
 closeModalform.addEventListener('click', () => {
   modalform.classList.add('hidden');
