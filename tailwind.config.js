@@ -9,7 +9,7 @@ module.exports = {
       
     },
     fontFamily: {
-      'Poppins': ["Poppins",'sans-serif'],
+      'poppins': ["Poppins"],
     
       'ubuntu':["Ubuntu"],
       'embed':["Exo 2"],
