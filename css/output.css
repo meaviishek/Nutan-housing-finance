@@ -1153,6 +1153,11 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1552,6 +1557,10 @@ video {
 
   .md\:ml-16 {
     margin-left: 4rem;
+  }
+
+  .md\:mb-10 {
+    margin-bottom: 2.5rem;
   }
 
   .md\:flex {
