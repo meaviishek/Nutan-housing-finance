@@ -1,24 +1,21 @@
-
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Nutan Housing - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Guerrilla&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
- 
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
-  <link href="../css/output.css" rel="stylesheet" />
+  <link href="../../css/output.css" rel="stylesheet" />
   <style>
     .menu-open {
       display: block;
@@ -34,112 +31,128 @@
 <body class="bg-gray-50 text-gray-800 font-poppins">
 
 
-  <nav class="flex-no-wrap fixed top-0 z-10 flex w-full items-center justify-between bg-[#fbfbfb] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start px-4">
-    <div class="md:h-16 py-2 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
-      <!-- Logo -->
-      <div class=" md:order-1 flex">
-        <!-- Heroicon - Chip Outline -->
-        <img src="./img/logo.png" class="w-20 h-12" >
+<nav class="flex-no-wrap fixed top-0 z-10 flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start px-4">
+	<div class="md:h-16 py-2 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
+		<!-- Logo -->
+		<div class=" md:order-1 flex">
+			<!-- Heroicon - Chip Outline -->
+			<img src="../img/logo.png" class="w-18 h-10" >
+   
+      <h1 class="text-lg lg:text-2xl ml-2 mt-[5px] font-bold text-primary font-ubuntu">NUTAN HOUSING FINANCE</h1>
+		</div>
+		<div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
+			<ul class=" hidden lg:flex font-semibold justify-between">
+               
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../../index.html">Home</a></li>
+        <li class="md:px-4 md:py-2 hover:text-secondary"><a href="../about.html">About Us</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../projects.html">Projects</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../career.html">Career</a></li>
+       
+        <li class="md:px-4 md:py-2 text-primary"><a href="../blog.html">Blog</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../contact.html">Contact Us</a></li>
+       
+			</ul>
+		</div>
+		<div class="order-2 hidden lg:flex md:order-3">
+      <button id="open-popup"><img  src="../img/enquirenow.jpeg" class="w-10 h-14 mr-6"></button>
+			<button id="open-modal" class="px-4 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl flex items-center gap-2">
+            
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Login</span>
+            </button>
+		</div>
+
+    <div class="lg:hidden">
+      <button id="navbar-toggle" class="focus:outline-none">
+        <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+	</div>
+
+
+
+  <div id="mobile-menu" class="menu-closed md:hidden bg-white text-primary text-2xl transition-menu fixed top-0 right-0 h-full w-2/3  p-4 text-center  z-50">
+    <div class="mb-4">
+      <button>
+    <i class="material-icons focus:outline-non" id="navbar-toggle-c">close</i></button>
+  </div>
+    <ul class="space-y-8">
+      <li><a href="../../index.html" class="block text-primary ">Home</a></li>
+      <li><a href="../about.html" class="block text-primary ">About Us</a></li>
+      <li><a href="../projects.html" class="block text-primary">Projects</a></li>
+      <li><a href="../career.html" class="block  text-primary ">Career</a></li>
+  
+      <li><a href="../blog.html" class="block  text-black">Blog</a></li>
+      <li><a href="../contact.html" class="block text-primary ">Contact Us</a></li>
+   
+      
+      <li><button id="open-modal-mob" class="px-4 mx-1/2 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl  gap-2">
+        <span>Login</span>
+    </button></li>
+    </ul>
+  </div>
+
+
+</nav>
+
+
+  
+
+
+
+
+
+
+  <main class=" mt-24">
+   
+    <h1 class="text-3xl text-primary font-poppins text-center font-bold mb-4">Our Blogs</h1>
+    <p class="text-lg text-center">Your trusted partner in home financing, offering elegant solutions tailored to your needs.</p>
+  
+   
      
-        <h1 class="text-lg lg:text-2xl ml-2 mt-[5px] font-bold font-ubuntu text-primary ">NUTAN HOUSING FINANCE</h1>
-      </div>
-      <div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
-        <ul class=" hidden lg:flex font-semibold justify-between">
-                 
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="../index.html">Home</a></li>
-          <li class="md:px-4 md:py-2 text-primary"><a href="./about.html">About Us</a></li>
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="./projects.html">Projects</a></li>
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="./career.html">Career</a></li>
+  
+  <div class="flex flex-col p-5 lg:px-48 lg:py-11">
+      <div class="bg-yellow-100 p-5 mb-10">
+          <h1 class="font-bold text-2xl mb-2">Why Buying a Home is Better Than Renting: A Simple Guide to Making the Right Choice</h1>
+          <p class="my-3">
+           
+            In the age-old debate of buying versus renting, many people find themselves pondering which option is truly the best fit for their circumstances. While renting offers flexibility and immediate housing solutions, the long-term benefits of homeownership often make it the superior choice. Let's explore why buying a home is generally a better investment and lifestyle decision compared to renting, explained in straightforward terms.
+            
+            <br><br>
+            One of the most significant advantages of buying a home is the opportunity to build equity and ownership over time. When you make mortgage payments each month, you're not just paying rent to a landlord; you're gradually paying off the loan you took to buy the home. This means that with every payment, you're getting closer to fully owning your home. In contrast, renters don't build equity because their monthly payments only cover the cost of living in the property.
+            
+            <br><br>
+            Buying a home provides stability and predictability in housing costs, which is especially important for long-term financial planning. With a fixed-rate mortgage, your monthly payments remain the same throughout the loan term, offering consistency that renters don't enjoy. On the other hand, renters are subject to rent increases at the end of lease terms, which can disrupt their budgets and financial stability.
+            
+            <br><br>
+            Homeownership comes with various tax benefits that renters don't have access to. For example, homeowners can deduct mortgage interest and property taxes from their taxable income, potentially leading to significant savings come tax time. These deductions can help offset the costs of homeownership and make it more financially advantageous compared to renting.
+            
+            <br><br>
+            The integration of green spaces and biophilic design is gaining momentum in sustainable real estate. Incorporating nature into the built environment has proven benefits for health, well-being, and productivity. We will explore the concept of biophilic design and showcase inspiring examples of how developers are integrating natural elements into residential and commercial spaces.
+            
+            <br><br>
+            Owning a home gives you the freedom to customize and personalize your living space according to your preferences. Whether it's painting the walls, renovating the kitchen, or landscaping the backyard, homeowners have the flexibility to make changes that reflect their lifestyle and tastes. On the other hand, renters often can't change things in the place they're living because they have to follow the rules in their lease.
+            <br><br>
+           
+            Beyond the immediate advantages, buying a home offers long-term financial benefits that can positively impact your wealth and financial security. As property values appreciate over time, homeowners stand to gain equity, which can be leveraged for future financial endeavors. Additionally, owning a home provides a sense of security in retirement, as you won't have to worry about monthly rent payments eating into your fixed income.
+            
+            <br><br>
+            In conclusion, while renting may offer short-term flexibility, buying a home is generally the better choice for long-term financial stability and wealth building. By owning a home, you're investing in your future and securing a valuable asset that can be appreciated over time. While buying a home requires careful consideration and financial planning, the benefits of homeownership often outweigh those of renting in the long run. So, if you're weighing your options, consider the advantages of buying a home and take steps towards making a smart investment in your future.</p>
         
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="./blog.html">Blog</a></li>
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="./contact.html">Contact Us</a></li>
-          
-        </ul>
       </div>
-      <div class="order-2 hidden lg:flex md:order-3">
-        <button id="open-popup"><img  src="./img/enquirenow.jpeg" class="w-10 h-14 mr-6"></button>
-        <button id="open-modal" class="px-4 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl flex items-center gap-2">
-              
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Login</span>
-              </button>
-      </div>
-  
-      <div class="lg:hidden">
-        <button id="navbar-toggle" class="focus:outline-none">
-          <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  
-  
-  
-    <div id="mobile-menu" class="menu-closed md:hidden bg-white text-primary text-2xl transition-menu fixed top-0 right-0 h-full w-2/3  p-4 text-center  z-50">
-      <div class="mb-4">
-        <button>
-      <i class="material-icons focus:outline-non" id="navbar-toggle-c">close</i></button>
-    </div>
-      <ul class="space-y-8">
-        <li><a href="../index.html" class="block text-primary ">Home</a></li>
-        <li><a href="about.html" class="block text-black ">About Us</a></li>
-        <li><a href="projects.html" class="block text-primary">Projects</a></li>
-        <li><a href="career.html" class="block  text-primary ">Career</a></li>
-
-        <li><a href="blog.html" class="block  text-primary">Blog</a></li>
-        <li><a href="contact.html" class="block text-primary ">Contact Us</a></li>
      
-        
-        <li><button id="open-modal-mob" class="px-4 mx-1/2 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl  gap-2">
-          <span>Login</span>
-      </button></li>
-      </ul>
-    </div>
-  </nav>
+      
+  </div>
   
 
 
-  
-
-
-
-
-
-
-  <main class="  mt-20">
-    <div>
-      <img src="./img/aboutus.jpg" class=" w-full mb-10 object-cover">
-    </div>
-    <!-- <p class="text-lg">Your trusted partner in home financing, offering elegant solutions tailored to your needs.</p> -->
-    <div class="py-16 bg-yellow-100">  
-      <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-          <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-            <div class="md:5/12 lg:w-5/12">
-              <img src="./img/about.png" alt="image" loading="lazy" width="" height="">
-            </div>
-            <div class="md:7/12 lg:w-6/12">
-              <h2 class="text-2xl text-primary font-bold md:text-4xl">WE PROVIDE YOU THE BEST EXPERIENCE</h2>
-              <p class="mt-6 text-xl text-gray-600 text-justify">The company is one of the fastest growing entities in the realty sector with a difference that offers luxury for reasonable costs, excellent customer care levels with highest customer satisfaction.
-                The Company is managed by highly qualified professionals who are fully engrossed to ensure that the company maintains its high standards in quality construction, timely delivery and customer satisfaction. The company has always strived hard to keep its commitments and thus enjoys an extremely resonant reputation in the construction industry
-               .<br><br>
-                The company has always maintained path breaking status and has pioneered various firsts in India. From trend setting luxury housing to providing homes for the poorest section of Indian Society.
-When it comes to buying a plot in Rajgir, Nutan Housing is a name that stands tall for its commitment to transparency, trust and customer service. With over 1decades of experience in the real estate industry, we have carved a niche for ourselves and continue to deliver the highest standards in terms of quality. The real estate industry thrives on competition and as a renowned real estate company in Rajgir, We’re thrilled to take on its many challenges and excel! It is Nutan Housing' Core values of trust, competitive spirit and innovation that have helped us, not just to survive the industry but ace it with several awards that proudly reinforce our belief that uncompromising quality always wins.
-<br><br>
-Nutan Housing Finance strongly believe that everyone should have a home and business they have always dreamed of having. At Nutan Housing Finance — an innovative real estate company in Rajgir — we don’t just provide customers with a plot in Bihar to build their home or business. We also provide our customers with a wide range of top-notch amenities that allow them to live a healthy and comfortable lifestyle. We also focus on building better and smarter spaces, hence, we ensure all our projects are designed to incorporate sustainable living practices. 
-If you want to buy a plot in Bihar at prime locations of Rajgir, Nutan Housing, the first choice real estate company in Bihar, has just the projects for you.
-The best real estate company in Bihar — and design your dream home and experience a lifestyle you always wished you had.</p>
-.
-            </div>
-          </div>
-      </div>
-    </div>
-  
-  
   </main>
 
+ 
 
   <div class="bg-black">
     <div class="flex flex-col space-y-10 justify-center pt-16 pb-12 p-4  ">
@@ -147,11 +160,11 @@ The best real estate company in Bihar — and design your dream home and experie
   
       <nav class="flex justify-center flex-wrap gap-6 text-gray-100 font-medium">
           <a class="hover:text-gray-500" href="../index.html">Home</a>
-          <a class="hover:text-gray-500" href="about.html">About</a>
-          <a class="hover:text-gray-500" href="projects.html">Projects</a>
-          <a class="hover:text-gray-500" href="partner.html">Become Partner</a>
-          <a class="hover:text-gray-500" href="blog.html">Gallery</a>
-          <a class="hover:text-gray-500" href="contact.html">Contact</a>
+          <a class="hover:text-gray-500" href="../about.html">About</a>
+          <a class="hover:text-gray-500" href="../projects.html">Projects</a>
+          <a class="hover:text-gray-500" href="../partner.html">Become Partner</a>
+          <a class="hover:text-gray-500" href="../blog.html">Gallery</a>
+          <a class="hover:text-gray-500" href="../contact.html">Contact</a>
       </nav>
   
       <div class="flex justify-center space-x-5">
@@ -178,12 +191,12 @@ The best real estate company in Bihar — and design your dream home and experie
       <img src="./img/enquirenow.jpeg" class="w-10 h-14 ml-3">
      </button>
     <a href="https://wa.me/8530804930" target="_blank" class="bg-green-500 p-2 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
-     <img src="./img/whatsapp.png" class="w-10 h-10">
+     <img src="../img/whatsapp.png" class="w-10 h-10">
     </a>
   
     <!-- Call Button -->
     <a href="tel:+91 9471613137" class="  rounded-full hover:scale-105 shadow-lg  transition duration-300">
-      <img src="./img/call.png" class="w-14 h-14 ">
+      <img src="../img/call.png" class="w-14 h-14 ">
     </a>
   </div>
 <!-- model -->
@@ -255,12 +268,10 @@ The best real estate company in Bihar — and design your dream home and experie
           Sign Up
         </button>
       </form>
+      </form>
     </div>
   </div>
 </div>
-
-
-
 
 
 <div id="modal1" class="modal1 fixed inset-0 z-50  items-center justify-center hidden">
@@ -299,7 +310,7 @@ The best real estate company in Bihar — and design your dream home and experie
   </div>
     
   </div>
-</div>
+
 
 
 
@@ -319,7 +330,6 @@ The best real estate company in Bihar — and design your dream home and experie
   const signupTab = document.getElementById('signup-tab');
   const loginForm = document.getElementById('login-form');
   const signupForm = document.getElementById('signup-form');
-
   openpopup.addEventListener('click', () => {
     modalform.classList.remove('hidden');
     modalform.classList.add('flex');
