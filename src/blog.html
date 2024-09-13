@@ -26,6 +26,37 @@
     .transition-menu {
       transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
+ 
+    /* Modal container (hidden by default) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Fullscreen image */
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-poppins">
@@ -134,15 +165,16 @@
 
   </main>
 
-  <div class="bg-yellow-100 mt-4">
-    <h1 class="text-primary text-center text-3xl font-poppins font-bold p-10 ">Gallery</h1>
+  <div class="bg-yellow-100  p-4">
+    <h1 class="text-primary text-center text-3xl font-poppins font-bold p-6 ">Gallery</h1>
     <div >
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-8">
  
         <div class="group cursor-pointer relative">
           <img
             src="./img/pic.jpeg"
             alt="Image 1"
+            onclick="openModal(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
         
@@ -152,6 +184,7 @@
           <img
             src="./img/pic1.jpeg"
             alt="Image 1"
+            onclick="openModal(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
         
@@ -161,6 +194,7 @@
           <img
             src="./img/pic4.jpeg"
             alt="Image 1"
+            onclick="openModal(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
        
@@ -170,6 +204,7 @@
           <img
             src="./img/pic3.jpeg"
             alt="Image 1"
+            onclick="openModal(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
          
@@ -178,6 +213,7 @@
           <img
             src="./img/pic5.jpeg"
             alt="Image 1"
+            onclick="openModal(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
          
@@ -186,6 +222,7 @@
           <img
             src="./img/pic6.jpeg"
             alt="Image 1"
+            onclick="openModal(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
          
@@ -203,6 +240,7 @@
           <img
             src="./img/pic2.jpeg"
             alt="Image 1"
+            onclick="openModal(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
        
@@ -212,6 +250,7 @@
           <img
             src="https://images.unsplash.com/photo-1502754400466-c87ff3039da7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMXx8cml2ZXJ8ZW58MHwwfHx8MTY5NDA5OTg4Mnww&ixlib=rb-4.0.3&q=80&w=1080"
             alt="Image 1"
+            onclick="openModal(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
           />
        
@@ -224,6 +263,30 @@
       
     </div>
   </div>
+
+
+
+  <div id="imageModal" class="modal flex">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+  function openModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    modal.style.display = 'flex';
+    modalImg.src = src;
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+  }
+</script>
+
+
 
   <footer class="w-full bg-black">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
