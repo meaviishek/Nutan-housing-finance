@@ -381,49 +381,7 @@
 
 
 
-  <script>
-    const carousel = document.getElementById('testimonial-carousel');
-    const items = carousel.children;
-    let currentIndex = 0;
 
-    // Auto slide function
-    function autoSlide() {
-      currentIndex = (currentIndex + 1) % items.length; // Loop through testimonials
-      carousel.scrollTo({
-        left: carousel.offsetWidth * currentIndex,
-        behavior: 'smooth'
-      });
-    }
-
-    // Slide interval (change every 3 seconds)
-    const slideInterval = setInterval(autoSlide, 4000);
-
-    // Manual scroll buttons
-    const scrollLeftBtn = document.getElementById('scrollLeftBtn');
-    const scrollRightBtn = document.getElementById('scrollRightBtn');
-
-    if (scrollLeftBtn && scrollRightBtn) {
-      scrollLeftBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        carousel.scrollTo({
-          left: carousel.offsetWidth * currentIndex,
-          behavior: 'smooth'
-        });
-      });
-
-      scrollRightBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % items.length;
-        carousel.scrollTo({
-          left: carousel.offsetWidth * currentIndex,
-          behavior: 'smooth'
-        });
-      });
-    }
-
-    // Optional: Pause auto-slide on mouse hover and resume on mouse leave
-    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    carousel.addEventListener('mouseleave', () => setInterval(autoSlide, 4000));
-  </script>
 
 
 
@@ -665,7 +623,7 @@
 
 
 <script>
-const viewMoreBtn = document.getElementById('viewMoreBtn')  
+ 
 const modalform=document.getElementById('modal1')
 const closeModalform = document.getElementById('close-form');
 const openpopup = document.getElementById('open-popup')
@@ -706,22 +664,6 @@ closeModalform.addEventListener('click', () => {
 });
 
 
-viewMoreBtn.addEventListener('click',()=>{
-
-  testimonials.forEach((testimonial,index)=>{
-    if (index>=2){
-     testimonial.classList.toggle('hidden')
-    }
-
-  });
-  if(viewMoreBtn.textContent === 'View More'){
-    viewMoreBtn.textContent='View Less'
-   
-  }else{
-      
-   viewMoreBtn.textContent='View More'
-  }
-})
 
 
 openModalMob.addEventListener('click', () => {
@@ -786,6 +728,51 @@ signupTab.addEventListener('click', () => {
       mobileMenu.classList.add('menu-closed');
     }
   });
+
+
+
+  const carousel = document.getElementById('testimonial-carousel');
+    const items = carousel.children;
+    let currentIndex = 0;
+
+    // Auto slide function
+    function autoSlide() {
+      currentIndex = (currentIndex + 1) % items.length; // Loop through testimonials
+      carousel.scrollTo({
+        left: carousel.offsetWidth * currentIndex,
+        behavior: 'smooth'
+      });
+    }
+
+    // Slide interval (change every 3 seconds)
+    const slideInterval = setInterval(autoSlide, 4000);
+
+    // Manual scroll buttons
+    const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+    const scrollRightBtn = document.getElementById('scrollRightBtn');
+
+    if (scrollLeftBtn && scrollRightBtn) {
+      scrollLeftBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        carousel.scrollTo({
+          left: carousel.offsetWidth * currentIndex,
+          behavior: 'smooth'
+        });
+      });
+
+      scrollRightBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        carousel.scrollTo({
+          left: carousel.offsetWidth * currentIndex,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Optional: Pause auto-slide on mouse hover and resume on mouse leave
+    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    carousel.addEventListener('mouseleave', () => setInterval(autoSlide, 4000));
+
 </script>
 </body>
 </html>
