@@ -221,57 +221,57 @@
  
 <div class="mt-10  p-8">
 <h1 class="text-3xl font-poppins font-bold text-primary text-center ">Amenities</h1>
-<div class="m-3 grid  mx-auto md:grid-cols-4 grid-cols-3 mt-10  max-w-6xl  gap-10 flex-wrap  justify-center ">
-  <div class="grid gap-4 justify-items-center text-center md:flex-1">
-      <div class=" p-4 ">
+<div class="m-3 grid  mx-auto lg:grid-cols-4 grid-cols-2 mt-10  md:max-w-10xl flex-wrap gap-10 ">
+  <div class="grid gap-4 justify-items-center text-center ">
+      <div class="">
          <img src="./src/img/temple.png" class="w-20 md:h-20 h-18 hover:scale-105 transition-all duration-400">
       </div>
       <h3 class="text-xl font-semibold text-primary">Temple</h3>
       
   </div>
-  <div class="grid gap-4 justify-items-center text-center md:flex-1">
+  <div class="grid gap-4 justify-items-center text-center ">
     <div class="  p-4 ">
        <img src="./src/img/electricity.png" class="w-20 md:h-20 h-18  hover:scale-105 transition-all duration-400">
     </div>
     <h3 class="text-xl font-semibold text-primary">Electricity</h3>
     
 </div>
-<div class="grid gap-4 justify-items-center text-center md:flex-1">
+<div class="grid gap-4 justify-items-center text-center ">
   <div class="  p-4 ">
      <img src="./src/img/garden.png" class="w-20 md:h-20 h-18  hover:scale-105 transition-all duration-400">
   </div>
   <h3 class="text-xl font-semibold text-primary">Park</h3>
   
 </div>
-<div class="grid gap-4 justify-items-center text-center md:flex-1">
+<div class="grid gap-4 justify-items-center text-center ">
   <div class="  p-4 ">
      <img src="./src/img/hall.png" class="w-20 md:h-20 h-18  hover:scale-105 transition-all duration-400">
   </div>
   <h3 class="text-xl font-semibold text-primary">Community Hall</h3>
   
 </div>
-<div class="grid gap-4 justify-items-center text-center md:flex-1">
+<div class="grid gap-4 justify-items-center text-center ">
   <div class="  p-4 ">
      <img src="./src/img/hospital.png" class="w-20 md:h-20 h-18  hover:scale-105 transition-all duration-400">
   </div>
   <h3 class="text-xl font-semibold text-primary">Hospital</h3>
   
 </div>
-<div class="grid gap-4 justify-items-center text-center md:flex-1">
+<div class="grid gap-4 justify-items-center text-center ">
   <div class="  p-4 ">
      <img src="./src/img/old.png" class="w-20 md:h-20 h-18  hover:scale-105 transition-all duration-400">
   </div>
   <h3 class="text-xl font-semibold text-primary">Old age lobby</h3>
   
 </div>
-<div class="grid gap-4 justify-items-center text-center md:flex-1">
+<div class="grid gap-4 justify-items-center text-center ">
   <div class=" p-4 ">
      <img src="./src/img/road.png" class="w-20 md:h-20 h-18  hover:scale-105 transition-all duration-400">
   </div>
   <h3 class="text-xl font-semibold text-primary">Roads</h3>
   
 </div>
-<div class="grid gap-4 justify-items-center text-center md:flex-1">
+<div class="grid gap-4 justify-items-center text-center ">
   <div class="  p-4 ">
      <img src="./src/img/school.png" class="w-20 md:h-20 h-18  hover:scale-105 transition-all duration-400">
   </div>
@@ -498,7 +498,7 @@
   <!-- WhatsApp Button -->
 
    <button id="open-popup1" class=" md:hidden ">
-    <img src="./src/img/enquirenow.jpeg" class="w-10 h-14 ml-3">
+    <img src="./src/img/enquirenow.jpeg" class="w-14 h-14 animate-pulse">
    </button>
   <a href="https://wa.me/8530804930" target="_blank" class="bg-green-500 p-2 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
    <img src="./src/img/whatsapp.png" class="w-10 h-10 animate-pulse">
@@ -785,7 +785,7 @@ signupTab.addEventListener('click', () => {
       });
 
       scrollRightBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex) % items.length;
+        currentIndex = (currentIndex+1) % items.length;
         carousel.scrollTo({
           left: carousel.offsetWidth * currentIndex,
           behavior: 'smooth'
