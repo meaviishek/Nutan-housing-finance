@@ -292,7 +292,7 @@
   <h1 class="text-primary text-center text-3xl  font-bold font-poppins" >Testimonials</h1>
   
    
-  <div class="relative  md:w-3/4 items-center lg:ml-52">
+  <div class="relative  lg:w-3/4 items-center lg:ml-52">
     <div class="testimonial-wrapper hide-scrollbar" id="testimonial-carousel">
       <!-- Testimonial 1 -->
       <div class="testimonial-item p-4 ">
@@ -374,10 +374,10 @@
     </div>
 
     <!-- Optional Manual Navigation -->
-    <button id="scrollLeftBtn" class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-yellow-100 text-black p-3 rounded-full">
+    <button id="scrollLeftBtn" class="absolute top-1/2 -left-4 lg:-left-12 transform -translate-y-1/2 bg-yellow-100 text-black p-3 rounded-full">
       &#10094;
     </button>
-    <button id="scrollRightBtn" class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-yellow-100 text-black p-3 rounded-full">
+    <button id="scrollRightBtn" class="absolute top-1/2 -right-4 lg:-right-12 transform -translate-y-1/2 bg-yellow-100 text-black p-3 rounded-full">
       &#10095;
     </button>
   </div>
@@ -411,8 +411,8 @@
   <footer class="w-full bg-black">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
         <!--Grid-->
-        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 py-10 max-w-xs mx-auto sm:max-w-2xl lg:max-w-full">
-            <div class="col-span-full lg:mb-10 max-lg:border-b max-lg:pb-8 lg:border-r  border-gray-200 lg:col-span-2 lg:max-w-xs">
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 pt-10 max-w-xs mx-auto sm:max-w-2xl lg:max-w-full">
+            <div class="col-span-full lg:mb-10 max-lg:border-b max-lg:pb-8 lg:border-r  border-gray-500 lg:col-span-2 lg:max-w-xs">
                 <a href="./index.html"  class="flex justify-center mb-12 lg:justify-start text-gray-100">
                     <img src="./src/img/logo.png" class="w-16 h-8"><span class="text-xl">Nutan Housing Finance</span>
                 </a>
@@ -427,7 +427,9 @@
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.9655 12.6929C15.672 12.5811 15.5252 12.5251 15.3708 12.5118C15.2164 12.4984 15.0622 12.5283 14.7538 12.5881L12.3984 13.0445C12.0235 13.1172 11.836 13.1535 11.6427 13.1227C11.4493 13.0918 11.2957 13.0064 10.9886 12.8356C9.07557 11.7718 7.78657 10.5439 6.95042 8.81181C6.827 8.55614 6.76529 8.4283 6.74183 8.25256C6.71837 8.07683 6.74863 7.91452 6.80915 7.5899L7.27298 5.1021C7.32932 4.79993 7.35749 4.64884 7.3442 4.49766C7.33092 4.34649 7.27683 4.20263 7.16866 3.91491L6.61323 2.43758C6.35178 1.74217 6.22105 1.39447 5.93618 1.19723C5.65132 1 5.27985 1 4.53692 1H2.68622C1.66783 1 0.866113 1.84144 1.01869 2.8481C1.39788 5.36068 2.51739 9.91727 5.78835 13.1882C9.22363 16.6235 14.172 18.1141 16.895 18.7072C17.9468 18.9357 18.8794 18.1159 18.8794 17.0388V15.3317C18.8794 14.592 18.8794 14.2222 18.6836 13.938C18.4877 13.6538 18.1421 13.5222 17.4509 13.2588L15.9655 12.6929Z" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            +91 9471613137 <br>+91 8530804930
+                            <a href="tel:+91 9471613137">+91 9471613137</a>
+                            
+                            <a href="tel:+91 8530804930">+91 8530804930</a> 
                     </li>
                     <li class="flex items-center justify-center gap-2 lg:justify-start text-gray-400">
                         <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -472,11 +474,14 @@
            
         </div>
         <!--Grid-->
-        <div class="py-7 border-t border-gray-200">
-            <div class="flex items-center justify-center ">
-                <span class="text-sm text-gray-500 ">©<a href="">Nutan Housing Finance</a> 2024, All rights reserved.</span>
-           
-            </div>
+        <div class=" flex md:py-4 py-7 md:gap-x-96 border-t border-gray-500">
+          <div class="flex items-center lg:ml-28 justify-start ">
+              <span class="text-sm text-gray-500 ">©<a href=""> Nutan Housing Finance</a> 2024, All rights reserved.</span>
+         
+          </div>
+          <div class=" justify-end items-end">
+            <span class="text-sm text-gray-500 "> Develop by parchar.co.in</span>
+          </div>
         </div>
     </div>
 </footer>
@@ -500,7 +505,7 @@
    <button id="open-popup1" class=" md:hidden ">
     <img src="./src/img/enquirenow.jpeg" class="w-14 h-14 animate-pulse">
    </button>
-  <a href="https://wa.me/8530804930" target="_blank" class="bg-green-500 p-2 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
+  <a href="https://wa.me/+918530804930" target="_blank" class="bg-green-500 p-2 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
    <img src="./src/img/whatsapp.png" class="w-10 h-10 animate-pulse">
   </a>
 
