@@ -1,24 +1,21 @@
-
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="icon" href="./img/logo.png">
 
   <title>Nutan Housing - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Guerrilla&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
   <link href="../css/output.css" rel="stylesheet" />
   <style>
@@ -31,175 +28,252 @@
     .transition-menu {
       transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
+ 
+    /* Modal container (hidden by default) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Fullscreen image */
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-poppins">
 
 
-  <nav class="flex-no-wrap fixed top-0 z-10 flex w-full items-center justify-between bg-[#fbfbfb] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start px-4">
-    <div class="md:h-16 py-2 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
-      <!-- Logo -->
-      <div class=" md:order-1 flex">
-        <!-- Heroicon - Chip Outline -->
-        <a href="../index.html">	<img src="./img/logo.png" class="md:w-20 md:h-12 w-18 h-10" ></a>
-     
-        <a href="../index.html"><h1 class="text-lg lg:text-2xl ml-2 mt-[5px] font-bold text-primary font-ubuntu">NUTAN HOUSING FINANCE</h1></a> 
-      </div>
-      <div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
-        <ul class=" hidden lg:flex font-semibold justify-between">
-                 
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="../index.html">Home</a></li>
-          <li class="md:px-4 md:py-2 text-primary"><a href="./about.html">About Us</a></li>
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="./projects.html">Projects</a></li>
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="./career.html">Career</a></li>
-        
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="./blog.html">Blog</a></li>
-          <li class="md:px-4 md:py-2 hover:text-secondary"><a href="./contact.html">Contact Us</a></li>
-          
-        </ul>
-      </div>
-      <div class="order-2 hidden lg:flex md:order-3">
-        <button id="open-popup" class="hover:scale-105 p-2 px-3 transition-all duration-500 bg-yellow-200 rounded-lg mr-3 animate-bounce">Enquire Now </button>
-        <button id="open-modal" class="px-4 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl flex items-center gap-2">
-              
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Login</span>
-              </button>
-      </div>
-  
-      <div class="lg:hidden">
-        <button id="navbar-toggle" class="focus:outline-none">
-          <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  
-  
-  
-    <div id="mobile-menu" class="menu-closed md:hidden bg-white text-primary text-2xl transition-menu fixed top-0 right-0 h-full w-2/3  p-4 text-center  z-50">
-      <div class="mb-4">
-        <button>
-      <i class="material-icons focus:outline-non" id="navbar-toggle-c">close</i></button>
-    </div>
-      <ul class="space-y-8">
-        <li><a href="../index.html" class="block text-primary ">Home</a></li>
-        <li><a href="about.html" class="block text-black ">About Us</a></li>
-        <li><a href="projects.html" class="block text-primary">Projects</a></li>
-        <li><a href="career.html" class="block  text-primary ">Career</a></li>
-
-        <li><a href="blog.html" class="block  text-primary">Blog</a></li>
-        <li><a href="contact.html" class="block text-primary ">Contact Us</a></li>
-     
-        
-        <li><button id="open-modal-mob" class="px-4 mx-1/2 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl  gap-2">
-          <span>Login</span>
-      </button></li>
-      </ul>
-    </div>
-  </nav>
-  
-
-
-  
-
-
-
-
-
-
-  <main class="  mt-20">
-    <div>
-      <img src="./img/aboutus.jpg" class=" w-full mb-10 object-cover">
-    </div>
-    <!-- <p class="text-lg">Your trusted partner in home financing, offering elegant solutions tailored to your needs.</p> -->
-    <div class="py-16 bg-yellow-100">  
-      <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-          <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-          
-            <div class=" ">
-              <h2 class="text-2xl text-primary font-bold md:text-4xl font-poppins">ABOUT NUTAN HOUSING</h2>
-              <p class="mt-6 md:text-xl text-md text-gray-600 text-justify font-poppins">
-                Nutan Housing Finance has sustained a steady growth to become the leading real estate developer in the region boasting of outstanding quality, consistency, economy, and creativity.
-
-The company has always maintained path breaking status and has pioneered various firsts in India. From trend setting luxury housing to providing homes for the poorest section of Indian Society. When it comes to buying a plot in Rajgir, Nutan Housing is a name that stands tall for its commitment to transparency, trust and customer service. With over 1 decades of experience in the real estate industry, we have carved a niche for ourselves and continue to deliver the highest standards in terms of quality. The real estate industry thrives on competition and as a renowned real estate company in Rajgir, We’re thrilled to take on its many challenges and excel! It is Nutan Housing' Core values of trust, competitive spirit and innovation that have helped us, not just to survive the industry but ace it with several awards that proudly reinforce our belief that uncompromising quality always wins.
-     <br><br>
-                
-                
-
-
-If you want to buy a plot in Bihar at prime locations of Rajgir, Nutan Housing, the first choice real estate company in Bihar, has just the projects for you.
-The best real estate company in Bihar — and design your dream home and experience a lifestyle you always wished you had.</p>
-.
-            </div>
-          </div>
-      </div>
-    </div>
-
-
+<nav class="flex-no-wrap fixed top-0 z-10 flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start px-4">
+	<div class="md:h-16 py-2 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
+		<!-- Logo -->
+    <div class=" md:order-1 flex">
+			<!-- Heroicon - Chip Outline -->
+      <a href="../index.html">	<img src="./img/logo.png" class="md:w-20 md:h-12 w-18 h-10 " ></a>
    
-      <div class="py-12 bg-white">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  
-              <div class="lg:text-center">
-                  <h2
-                      class="font-heading mb-4 bg-yellow-100  px-4 py-2 rounded-lg md:w-64 md:mx-auto text-xs font-semibold tracking-widest text-black uppercase title-font">
-                      Why choose us?
-                  </h2>
-                  <p class="font-heading mt-2 text-primary text-3xl leading-8 font-semibold tracking-tight  sm:text-4xl">
-                    Expert Guidance for Every Step of Your Property Journey
-                  </p>
-                  <p class="mt-4 max-w-10xl text-md text-justify md:text-center font-poppins text-gray-500 lg:mx-auto">
-                    Our projects are not just built with brick and mortar, we understand the value of our customer’s emotions attached to a property and so, we take the pledge to put sustained effort to enhance quality and provide value for our customer’s money.
+      <a href="../index.html"><h1 class="text-lg lg:text-2xl ml-2 mt-[5px] font-bold text-primary font-ubuntu">NUTAN HOUSING FINANCE</h1></a> 
+    </div>
+		<div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
+			<ul class=" hidden lg:flex font-semibold justify-between">
+               
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../index.html">Home</a></li>
+        <li class="md:px-4 md:py-2 hover:text-secondary"><a href="about.html">About Us</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="projects.html">Projects</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="career.html">Career</a></li>
+       
+        <li class="md:px-4 md:py-2 text-primary"><a href="blog.html">Blog</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="contact.html">Contact Us</a></li>
+       
+			</ul>
+		</div>
+		<div class="order-2 hidden lg:flex md:order-3">
+      <button id="open-popup" class="hover:scale-105 p-2 px-3 transition-all duration-500 bg-yellow-200 rounded-lg mr-3 animate-bounce">Enquire Now </button>
+			<button id="open-modal" class="px-4 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl flex items-center gap-2">
+            
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Login</span>
+            </button>
+		</div>
 
-                    A clean and healthy atmosphere is the need of this era, and Nutan Housing pays equal attention to the surroundings, and beautifully landscaped gardens adorning our projects.
-                    With Eco-friendly construction, High-quality construction management, and implementation of the newest technology, we provide you with nothing but the best.
-                    The resilience in the Company’s vision and ability to acclimatize is what makes us the leading brand in the town.
-                  </p>
-              </div>
-  
-              <div class="mt-10">
-                  <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                      <div class="relative  hover:shadow-lg hover:shadow-yellow-300 hover:bg-yellow-100 duration-300 transition-all p-4 rounded-lg">
-                          <dt>
-                            <div
-                            class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                            <img src="./img/mission.png" >
-                        </div>
-                              <p class="font-heading ml-16 text-lg text-primary leading-6 font-bold ">Mission</p>
-                          </dt>
-                          <dd class="mt-2 ml-16 text-base text-gray-500 text-justify font-poppins">
-                            Nutan Housing Finance is committed to elevating the property experience through exceptional service, expert guidance, and innovative solutions. Our mission is to guide clients through every step of the property journey with integrity and professionalism, ensuring a seamless and rewarding experience. We strive to exceed expectations by fostering a client-centric approach, ensuring each transaction is handled with care, efficiency, and integrity. <br>
-                            Our passion for real estate drives us to create lasting relationships and contribute positively to the communities we serve.
+    <div class="lg:hidden">
+      <button id="navbar-toggle" class="focus:outline-none">
+        <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+	</div>
 
-                          </dd>
-                      </div>
-                      <div class="relative hover:shadow-lg hover:shadow-yellow-300 hover:bg-yellow-100 duration-300 transition-all p-4 rounded-lg">
-                          <dt>
-                            <div
-                            class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                            <img src="./img/vision.png" >
-                        </div>
-                              <p class="font-heading ml-16 text-lg leading-6 text-primary font-bold ">Vision
-                              </p>
-                          </dt>
-                          <dd class="mt-2 ml-16 text-base text-justify text-gray-500"> Our aim is to provide premium housing and commercial developments to our clients at par with international standards so as to provide benchmark quality standards and lifestyles. However care must be taken to keep a price line within the affordability range of the Indian market so that people are able to afford an International lifestyle at a reasonable price. We envision a future where Nutan Housing Finance is synonymous with reliability, cutting-edge solutions, and a passion for creating outstanding real estate experiences that enhance the lives of our clients and enrich our communities.
-                          </dd>
-                      </div>
-                     
-                    
-                  </dl>
-              </div>
+
+
+  <div id="mobile-menu" class="menu-closed md:hidden bg-white text-primary text-2xl transition-menu fixed top-0 right-0 h-full w-2/3  p-4 text-center  z-50">
+    <div class="mb-4">
+      <button>
+    <i class="material-icons focus:outline-non" id="navbar-toggle-c">close</i></button>
+  </div>
+    <ul class="space-y-8">
+      <li><a href="../index.html" class="block text-primary ">Home</a></li>
+      <li><a href="about.html" class="block text-primary ">About Us</a></li>
+      <li><a href="projects.html" class="block text-primary">Projects</a></li>
+      <li><a href="career.html" class="block  text-primary ">Career</a></li>
   
-          </div>
+      <li><a href="blog.html" class="block  text-black">Blog</a></li>
+      <li><a href="contact.html" class="block text-primary ">Contact Us</a></li>
+   
+      
+      <li><button id="open-modal-mob" class="px-4 mx-1/2 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl  gap-2">
+        <span>Login</span>
+    </button></li>
+    </ul>
+  </div>
+
+
+</nav>
+
+
+  
+
+
+
+
+
+
+  <main class=" mt-20">
+    <div>
+      <img src="./img/blog.jpg" class=" w-full mb-10 object-cover">
+    </div>
+    <h1 class="text-3xl text-primary font-poppins text-center font-bold mb-4">Our Blogs</h1>
+    <p class="text-lg text-center font-poppins">Your trusted partner in home financing, offering elegant solutions tailored to your needs.</p>
+  
+   
+     
+  
+  <div class="flex flex-col p-5 lg:px-48 lg:py-11">
+      <div class="bg-yellow-100 p-5 mb-10">
+          <h1 class="font-bold text-2xl mb-2 font-poppins">Why Buying a Home is Better Than Renting: A Simple Guide to Making the Right Choice</h1>
+          <p class="my-3 font-poppins">
+           
+            In the age-old debate of buying versus renting, many people find themselves pondering which option is truly the best fit for their circumstances. While renting offers flexibility and immediate housing solutions, the long-term benefits of homeownership often make it the superior choice. Let's explore why buying a home is generally a better investment and lifestyle decision compared to renting, explained in straightforward terms.
+            
+         <a href="./blogs/blog1.html"><button class="text-yellow-500 font-semibold text-lg  hover:text-yellow-300 p-2 my-1 rounded">Read More...</button></a> 
       </div>
- 
+     
+      
+  </div>
   
-  
+
+
   </main>
+
+  <div class="bg-yellow-100  p-4">
+    <h1 class="text-primary text-center text-3xl font-poppins font-bold p-6 ">Gallery</h1>
+    <div >
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-8">
+ 
+        <div class="group cursor-pointer relative">
+          <img
+            src="./img/pic.jpeg"
+            alt="Image 1"
+            onclick="openModali(this.src)"
+            class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+          />
+        
+        </div>
+       
+        <div class="group cursor-pointer relative">
+          <img
+            src="./img/pic1.jpeg"
+            alt="Image 1"
+            onclick="openModali(this.src)"
+            class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+          />
+        
+        </div>
+       
+        <div class="group cursor-pointer relative">
+          <img
+            src="./img/pic4.jpeg"
+            alt="Image 1"
+            onclick="openModali(this.src)"
+            class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+          />
+       
+        </div>
+       
+        <div class="group cursor-pointer relative">
+          <img
+            src="./img/pic3.jpeg"
+            alt="Image 1"
+            onclick="openModali(this.src)"
+            class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+          />
+         
+        </div>
+        <div class="group cursor-pointer relative">
+          <img
+            src="./img/pic5.jpeg"
+            alt="Image 1"
+            onclick="openModali(this.src)"
+            class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+          />
+         
+        </div>
+        <div class="group cursor-pointer relative">
+          <img
+            src="./img/pic6.jpeg"
+            alt="Image 1"
+            onclick="openModali(this.src)"
+            class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+          />
+         
+        </div>
+        
+       
+       
+       
+       
+    
+       
+      
+       
+        <div class="group cursor-pointer relative">
+          <img
+            src="./img/pic2.jpeg"
+            alt="Image 1"
+            onclick="openModali(this.src)"
+            class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+          />
+       
+        </div>
+       
+        <div class="group cursor-pointer relative">
+          <img
+            src="https://images.unsplash.com/photo-1502754400466-c87ff3039da7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMXx8cml2ZXJ8ZW58MHwwfHx8MTY5NDA5OTg4Mnww&ixlib=rb-4.0.3&q=80&w=1080"
+            alt="Image 1"
+            onclick="openModali(this.src)"
+            class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+          />
+       
+        </div>
+      
+      
+        <!-- Repeat this div for each image -->
+      </div>
+      
+      
+    </div>
+  </div>
+
+
+
+  <div id="imageModal" class="imageModal flex">
+    <span class="close" onclick="closeModali()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+
 
 
   <footer class="w-full bg-black">
@@ -241,7 +315,7 @@ The best real estate company in Bihar — and design your dream home and experie
                     <li class="mb-6"><a href="../index.html"   class="text-gray-500 hover:text-gray-700">Home</a></li>
                     <li class="mb-6"><a href="./blog.html"  class=" text-gray-500 hover:text-gray-700">Gallery</a></li>
                     <li class="mb-6"><a href="./emi_calc.html"  class=" text-gray-500 hover:text-gray-700">EMI calculator</a></li>
-                    <li ><button  id="b_advisor"  class=" text-gray-500 hover:text-gray-700">Become an Advisor</button></li>
+                    <li ><a href="./career.html"  class=" text-gray-500 hover:text-gray-700">Become an Advisor</a></li>
                 </ul>
             </div>
    
@@ -268,20 +342,20 @@ The best real estate company in Bihar — and design your dream home and experie
            
         </div>
         <!--Grid-->
-        <div class=" flex py-4 mt-4 md:gap-x-96 gap-x-8 border-t border-gray-500">
+        <div class=" flex py-4 mt-4 md:gap-x-96 border-t border-gray-500">
             <div class="flex items-center md:ml-28 justify-start ">
                 <span class="text-sm text-gray-500 ">©<a href=""> Nutan Housing Finance</a> 2024, All rights reserved.</span>
            
             </div>
             <div class=" justify-end items-end">
-              <span class="text-sm text-gray-500 "> Develop by prachar.com</span>
+              <span class="text-sm text-gray-500 "> Develop by parchar.co.in</span>
             </div>
           </div>
       
-        
-
     </div>
 </footer>
+
+
 
   <div class="fixed bottom-5 right-5 flex flex-col space-y-3 z-50">
     <!-- WhatsApp Button -->
@@ -299,7 +373,9 @@ The best real estate company in Bihar — and design your dream home and experie
   </div>
 <!-- model -->
 <div id="modal-background" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
-<div id="modal" class="modal fixed inset-0 z-50  items-center justify-center hidden">
+
+
+<div id="modal" class="modal fixed inset-0 z-50  items-center justify-center flex">
   <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-8 relative">
     <!-- Close Button -->
     <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800">
@@ -331,22 +407,6 @@ The best real estate company in Bihar — and design your dream home and experie
           Login
         </button>
       </form>
-      <div class="mt-2" >
-        <h1 class="text-center ">or</h1>
-      <div id="g_id_onload"
-           data-client_id="YOUR_CLIENT_ID.apps.googleusercontent.com"
-           data-callback="handleCredentialResponse">
-      </div>
-      <div class="g_id_signin" data-type="standard"></div>
-  
-      <script>
-          function handleCredentialResponse(response) {
-              const data = jwt_decode(response.credential);
-              console.log(data);
-              // Send data to your server
-          }
-      </script>
-      </div>
     </div>
 
     <!-- Signup Form (hidden initially) -->
@@ -355,7 +415,7 @@ The best real estate company in Bihar — and design your dream home and experie
       <form>
         <div class="mb-4">
           <label class="block text-gray-700">Name*</label>
-          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your Name" />
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your name" />
         </div>
         <div class="mb-4">
           <label class="block text-gray-700">Email*</label>
@@ -389,8 +449,6 @@ The best real estate company in Bihar — and design your dream home and experie
 
 
 
-
-
 <div id="modal1" class="modal1 fixed inset-0 z-50  items-center justify-center hidden">
   <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-8 relative">
  
@@ -409,7 +467,7 @@ The best real estate company in Bihar — and design your dream home and experie
       <form>
         <div class="mb-4">
           <label class="block text-gray-700">Name</label>
-          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your Name" />
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your name" />
         </div>
         <div class="mb-4">
           <label class="block text-gray-700">Phone Number *</label>
@@ -427,12 +485,9 @@ The best real estate company in Bihar — and design your dream home and experie
   </div>
     
   </div>
-</div>
-
 
 
 <script>
-  
   const modalform=document.getElementById('modal1')
  
   const closeModalform = document.getElementById('close-form');
@@ -448,26 +503,13 @@ The best real estate company in Bihar — and design your dream home and experie
   const loginForm = document.getElementById('login-form');
   const signupForm = document.getElementById('signup-form');
 
-  const b_advisor = document.getElementById('b_advisor')
-  b_advisor.addEventListener('click',()=>{
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    modalBg.classList.remove('hidden');
-  })
-  
 
   openpopup.addEventListener('click', () => {
     modalform.classList.remove('hidden');
     modalform.classList.add('flex');
     modalBg.classList.remove('hidden');
   });
-  const enquire1 = document.getElementById('enquire1')
-enquire1.addEventListener('click', () => {
-  modalform.classList.remove('hidden');
-  modalform.classList.add('flex');
-  modalBg.classList.remove('hidden');
-});
-
+  
   openpopup1.addEventListener('click', () => {
     modalform.classList.remove('hidden');
     modalform.classList.add('flex');
@@ -541,6 +583,19 @@ enquire1.addEventListener('click', () => {
         mobileMenu.classList.add('menu-closed');
       }
     });
+
+    function openModali(src) {
+      const modali = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      
+      modali.style.display = 'flex';
+      modalImg.src = src;
+    }
+  
+    function closeModali() {
+      const modali = document.getElementById('imageModal');
+      modali.style.display = 'none';
+    }
   </script>
 </body>
 </html>
