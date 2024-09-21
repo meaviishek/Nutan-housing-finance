@@ -28,7 +28,8 @@
     "axe/parsing": [
       "default",
       {
-        "duplicate-id": "off"
+        "duplicate-id": "off",
+        "marquee": "off"
       }
     ],
     "highest-available-document-mode": "off"
