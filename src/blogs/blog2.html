@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" href="./img/logo.png">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
+  <title>Nutan Housing - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  
+  <link href="../../css/output.css" rel="stylesheet" />
+  <style>
+    .menu-open {
+      display: block;
+    }
+    .menu-closed {
+      display: none;
+    }
+    .transition-menu {
+      transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-poppins">
+
+
+<nav class="flex-no-wrap fixed top-0 z-10 flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start px-4">
+	<div class="md:h-16 py-2 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
+		<!-- Logo -->
+    <div class=" md:order-1 flex">
+			<!-- Heroicon - Chip Outline -->
+      <a href="../index.html">	<img src="../img/logo.png" class="md:w-20 md:h-12 w-18 h-10" ></a>
+   
+      <a href="../index.html"> <h1 class="text-lg lg:text-2xl ml-2 mt-[5px] font-bold text-primary font-ubuntu">NUTAN HOUSING FINANCE</h1></a>
+    </div>
+		<div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
+			<ul class=" hidden lg:flex font-semibold justify-between">
+               
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../../index.html">Home</a></li>
+        <li class="md:px-4 md:py-2 hover:text-secondary"><a href="../about.html">About Us</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../projects.html">Projects</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../career.html">Career</a></li>
+       
+        <li class="md:px-4 md:py-2 text-primary"><a href="../blog.html">Blog</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../contact.html">Contact Us</a></li>
+       
+			</ul>
+		</div>
+		<div class="order-2 hidden lg:flex md:order-3">
+      <button id="open-popup" class="hover:scale-105 p-2 px-3 transition-all duration-500 bg-yellow-200 rounded-lg mr-3 animate-bounce">Enquire Now </button>
+			<button id="open-modal" class="px-4 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl flex items-center gap-2">
+            
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Login</span>
+            </button>
+		</div>
+
+    <div class="lg:hidden">
+      <button id="navbar-toggle" class="focus:outline-none">
+        <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+	</div>
+
+
+
+  <div id="mobile-menu" class="menu-closed md:hidden bg-white text-primary text-2xl transition-menu fixed top-0 right-0 h-full w-2/3  p-4 text-center  z-50">
+    <div class="mb-4">
+      <button>
+    <i class="material-icons focus:outline-non" id="navbar-toggle-c">close</i></button>
+  </div>
+    <ul class="space-y-8">
+      <li><a href="../../index.html" class="block text-primary ">Home</a></li>
+      <li><a href="../about.html" class="block text-primary ">About Us</a></li>
+      <li><a href="../projects.html" class="block text-primary">Projects</a></li>
+      <li><a href="../career.html" class="block  text-primary ">Career</a></li>
+  
+      <li><a href="../blog.html" class="block  text-black">Blog</a></li>
+      <li><a href="../contact.html" class="block text-primary ">Contact Us</a></li>
+   
+      
+      <li><button id="open-modal-mob" class="px-4 mx-1/2 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl  gap-2">
+        <span>Login</span>
+    </button></li>
+    </ul>
+  </div>
+
+
+</nav>
+
+
+  
+
+
+
+
+
+
+  <main class=" mt-24">
+   
+    <h1 class="text-3xl text-primary font-poppins text-center font-bold mb-4">Our Blogs</h1>
+    
+  
+   
+     
+  
+  <div class="flex flex-col p-5 lg:px-48 lg:py-11">
+      <div class="bg-yellow-100 p-5 mb-10">
+          <h1 class="font-bold text-2xl mb-2">The Future of Sustainable Real Estate: Trends and Innovations</h1>
+          <p class="my-3">
+           
+            As the world becomes more environmentally conscious, sustainable real estate practices are gaining significant traction. In this blog post, we will explore the future of sustainable real estate and delve into the latest trends and innovations that are shaping the industry. From green building materials to energy-efficient designs, we will uncover how these advancements are not only benefiting the environment but also enhancing the quality of life for residents and investors alike.
+
+            <h2 class="text-lg font-semibold mb-2 mt-4">Green Building Materials:</h2>
+            One of the key trends in sustainable real estate is the use of green building materials. From recycled materials to renewable resources, developers are adopting eco-friendly options that minimize environmental impact without compromising on quality and aesthetics. We will discuss the benefits of these materials and explore some innovative examples.
+            
+            <h2 class="text-lg font-semibold mb-2 mt-4">Energy Efficiency:</h2>
+            Energy efficiency is at the forefront of sustainable real estate. Buildings with energy-saving features, such as solar panels, smart lighting, and advanced insulation systems, are becoming increasingly popular. We will delve into the latest technologies and strategies being implemented to reduce energy consumption and lower carbon footprints.
+            
+            <h2 class="text-lg font-semibold mb-2 mt-4">Net-Zero Buildings:</h2>
+            Net-zero buildings, which produce as much energy as they consume, are revolutionizing the real estate landscape. We will examine the concept of net-zero buildings and discuss their potential impact on sustainability goals. From innovative design approaches to integrated renewable energy systems, we will highlight the features that make these buildings a game-changer.
+            
+            <h2 class="text-lg font-semibold mb-2 mt-4">Green Spaces and Biophilic Design:</h2>
+            The integration of green spaces and biophilic design is gaining momentum in sustainable real estate. Incorporating nature into the built environment has proven benefits for health, well-being, and productivity. We will explore the concept of biophilic design and showcase inspiring examples of how developers are integrating natural elements into residential and commercial spaces.
+            
+            <h2 class="text-lg font-semibold mb-2 mt-4">Smart Building Management Systems:</h2>
+            Advancements in technology have given rise to smart building management systems, allowing for efficient monitoring and control of various aspects of a property. We will discuss the role of Internet of Things (IoT) devices, data analytics, and automation in optimizing energy usage, enhancing security, and improving overall building performance.
+            
+            <h2 class="text-lg font-semibold mb-2 mt-4">The Rise of Green Certifications:</h2>
+            Green certifications, such as LEED (Leadership in Energy and Environmental Design) and WELL Building Standard, are becoming increasingly important in sustainable real estate. We will explore the significance of these certifications, their impact on property value, and how they contribute to a more sustainable built environment.
+            
+            <h2 class="text-lg font-semibold mb-2 mt-4">Conclusion:</h2>
+            The future of sustainable real estate is bright, with innovative trends and technologies reshaping the industry. By adopting green building materials, prioritizing energy efficiency, and incorporating biophilic design principles, developers are creating a more sustainable and enjoyable living and working environment. As we move forward, it is essential to embrace these trends and innovations to build a better, greener future for all.
+        
+      </div>
+     
+      
+  </div>
+  
+
+
+  </main>
+
+ 
+
+  <footer class="w-full bg-black">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+        <!--Grid-->
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 py-10 max-w-xs mx-auto sm:max-w-2xl lg:max-w-full">
+            <div class="col-span-full lg:mb-10 max-lg:border-b max-lg:pb-8 lg:border-r border-gray-200 lg:col-span-2 lg:max-w-xs">
+                <a href="../../index.html"  class="flex justify-center mb-12 lg:justify-start text-gray-100">
+                    <img src="../img/logo.png" class="w-18 h-10"><span class="text-xl">Nutan Housing Finance</span>
+                </a>
+                <ul class="grid gap-5">
+                    <li class="flex items-center justify-center gap-2 lg:justify-start text-gray-400">
+                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.87798 3.83594L6.80031 7.08201C8.55849 8.13692 9.43758 8.66437 10.4034 8.64139C11.3693 8.6184 12.2223 8.04973 13.9283 6.91239L18.1246 3.83594M8.33464 14.6693H11.668C14.8107 14.6693 16.382 14.6693 17.3583 13.693C18.3346 12.7166 18.3346 11.1453 18.3346 8.0026C18.3346 4.85991 18.3346 3.28856 17.3583 2.31225C16.382 1.33594 14.8107 1.33594 11.668 1.33594H8.33464C5.19194 1.33594 3.62059 1.33594 2.64428 2.31225C1.66797 3.28856 1.66797 4.85991 1.66797 8.0026C1.66797 11.1453 1.66797 12.7166 2.64428 13.693C3.62059 14.6693 5.19194 14.6693 8.33464 14.6693Z" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round"/>
+                            </svg>
+                            info@nutanhousing.com
+                    </li>
+                    <li class="flex items-center justify-center gap-2 lg:justify-start text-gray-400">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.9655 12.6929C15.672 12.5811 15.5252 12.5251 15.3708 12.5118C15.2164 12.4984 15.0622 12.5283 14.7538 12.5881L12.3984 13.0445C12.0235 13.1172 11.836 13.1535 11.6427 13.1227C11.4493 13.0918 11.2957 13.0064 10.9886 12.8356C9.07557 11.7718 7.78657 10.5439 6.95042 8.81181C6.827 8.55614 6.76529 8.4283 6.74183 8.25256C6.71837 8.07683 6.74863 7.91452 6.80915 7.5899L7.27298 5.1021C7.32932 4.79993 7.35749 4.64884 7.3442 4.49766C7.33092 4.34649 7.27683 4.20263 7.16866 3.91491L6.61323 2.43758C6.35178 1.74217 6.22105 1.39447 5.93618 1.19723C5.65132 1 5.27985 1 4.53692 1H2.68622C1.66783 1 0.866113 1.84144 1.01869 2.8481C1.39788 5.36068 2.51739 9.91727 5.78835 13.1882C9.22363 16.6235 14.172 18.1141 16.895 18.7072C17.9468 18.9357 18.8794 18.1159 18.8794 17.0388V15.3317C18.8794 14.592 18.8794 14.2222 18.6836 13.938C18.4877 13.6538 18.1421 13.5222 17.4509 13.2588L15.9655 12.6929Z" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            9471613137, 8539804930
+                    </li>
+                    <li class="flex items-center justify-center gap-2 lg:justify-start text-gray-400">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.6654 8.60868C14.6654 11.8081 12.1279 14.3862 10.184 16.6526C9.22437 17.7713 8.74457 18.3307 7.9987 18.3307C7.25282 18.3307 6.77302 17.7713 5.81342 16.6526C3.86945 14.3862 1.33203 11.8081 1.33203 8.60868C1.33203 6.76685 2.03441 5.00046 3.28465 3.69809C4.5349 2.39573 6.23059 1.66406 7.9987 1.66406C9.76681 1.66406 11.4625 2.39573 12.7127 3.69809C13.963 5.00046 14.6654 6.76685 14.6654 8.60868Z" stroke="#4F46E5" stroke-width="1.6"/>
+                            <path d="M9.66536 7.7406C9.66536 8.69945 8.91917 9.47676 7.9987 9.47676C7.07822 9.47676 6.33203 8.69945 6.33203 7.7406C6.33203 6.78175 7.07822 6.00445 7.9987 6.00445C8.91917 6.00445 9.66536 6.78175 9.66536 7.7406Z" stroke="#4F46E5" stroke-width="1.6"/>
+                            </svg>
+                            jhunki Baba Road, Patel Nagar Near RDH School, Rajgir, 803121
+                    </li>
+                </ul>
+            </div>
+            <!--End Col-->
+            <div class="lg:mx-auto text-left ">
+                <h4 class="text-lg text-gray-400 font-medium mb-7">Nutan Housing Finance</h4>
+                <ul class="text-sm  transition-all duration-500">
+                    <li class="mb-6"><a href="../../index.html"  class="text-gray-500 hover:text-gray-700">Home</a></li>
+                    <li class="mb-6"><a href="../about.html"  class=" text-gray-500 hover:text-gray-700">About</a></li>
+                    <li class="mb-6"><a href="../emi_calc.html"  class=" text-gray-500 hover:text-gray-700">Emi calcilator</a></li>
+                    <li><a href="../career.html"  class=" text-gray-500 hover:text-gray-700">Become an advisor</a></li>
+                </ul>
+            </div>
+            <!--End Col-->
+            
+            <!--End Col-->
+           
+            <!--End Col-->
+            <div class="lg:mx-auto text-left ">
+                <h4 class="text-lg text-gray-400 font-medium mb-7">Support</h4>
+                <ul class="text-sm  transition-all duration-500">
+                  <li class="mb-6"><button  id="enquire1" class=" text-gray-500  hover:text-gray-700">Enquire Now</button></li>
+                    <li class="mb-6"><a href="../contact.html"  class="text-gray-500 hover:text-gray-700">Customer Support</a></li>
+                    
+                    <li ><a href="javascript:;"  class=" text-gray-500 hover:text-gray-700">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+
+            <div class="lg:mx-auto text-left ">
+              <h4 class="text-lg text-gray-400 font-medium mb-7">Follow Us On</h4>
+              <ul class="text-sm flex transition-all duration-500 gap-6">
+                  <li><a href="https://www.facebook.com/nutan.housing/"><img src="../img/face.png" class="w-10 h-10" alt=""></a></li>
+                  <li><a href="https://www.instagram.com/nutan.housing"><img src="../img/insta.png" class="w-10 h-10" alt=""></a></li>
+                  <li><a href="https://youtube.com/@nutanhousingfinance-l2x?si=Lt6UVWzoi52a7jZt"><img src="../img/you.png"  class="w-10 h-10" alt=""></a></li>
+              </ul>
+          </div>
+            <!--End Col-->
+           
+        </div>
+        <!--Grid-->
+        <div class="py-7 border-t border-gray-200">
+            <div class="flex items-center justify-center ">
+                <span class="text-sm text-gray-500 ">©<a href="">Nutan Housing Finance</a> 2024, All rights reserved.</span>
+           
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+  <div class="fixed bottom-5 right-5 flex flex-col space-y-3 z-50">
+    <!-- WhatsApp Button -->
+    <button id="open-popup1" class=" md:hidden">
+      <img src="../img/enquirenow.jpeg" class="w-14 h-14 animate-pulse">
+     </button>
+    <a href="https://wa.me/+918539804930" target="_blank" class="bg-green-500 p-2 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
+     <img src="../img/whatsapp.png" class="w-10 h-10">
+    </a>
+  
+    <!-- Call Button -->
+    <a href="tel:+91 9471613137" class="  rounded-full hover:scale-105 shadow-lg  transition duration-300">
+      <img src="../img/call.png" class="w-14 h-14 ">
+    </a>
+  </div>
+<!-- model -->
+<div id="modal-background" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+<div id="modal" class="modal fixed inset-0 z-50  items-center justify-center hidden">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-8 relative">
+    <!-- Close Button -->
+    <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Tabs for Login/Signup -->
+    <div class="flex justify-center mb-8">
+      <button id="login-tab" class="bg-yellow-500 text-white px-4 py-2 rounded-t-md mr-1 focus:outline-none">Login</button>
+      <button id="signup-tab" class="bg-yellow-200 text-gray-800 px-4 py-2 rounded-t-md focus:outline-none">Sign Up</button>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-form" class="block">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <form>
+        <div class="mb-4">
+          <label class="block text-gray-700">Email</label>
+          <input type="email" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your email" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Password</label>
+          <input type="password" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your password" />
+          <a href="#" id="forgotPasswordLink" class=" text-sm  text-yellow-700">Forgot Password?</a>
+        </div>
+        <button type="submit" class="w-full bg-gold text-white px-4 py-2 rounded-md shadow-lg bg-primary hover:bg-yellow-500 transition duration-300">
+          Login
+        </button>
+      </form>
+      <div class="mt-2" >
+        <h1 class="text-center ">or</h1>
+      <div id="g_id_onload"
+           data-client_id="YOUR_CLIENT_ID.apps.googleusercontent.com"
+           data-callback="handleCredentialResponse">
+      </div>
+      <div class="g_id_signin" data-type="standard"></div>
+  
+      <script>
+          function handleCredentialResponse(response) {
+              const data = jwt_decode(response.credential);
+              console.log(data);
+              // Send data to your server
+          }
+      </script>
+      </div>
+    </div>
+
+    <!-- Signup Form (hidden initially) -->
+    <div id="signup-form" class="hidden">
+      <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+      <form>
+        <div class="mb-4">
+          <label class="block text-gray-700">Name*</label>
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your Name" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Email*</label>
+          <input type="email" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your email" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Phone Number*</label>
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your phone Number" />
+        </div>
+        <div class="mb-4">
+          <label for="options" class="block  font-medium text-gray-600">Select Role</label>
+        <select id="options" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="option1">Advisor</option>
+           
+        </select>
+        </div>
+
+
+        <div class="mb-4">
+          <label class="block text-gray-700">Password</label>
+          <input type="password" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Create a password" />
+        </div>
+        <button type="submit" class="w-full bg-gold text-white px-4 py-2 rounded-md shadow-lg bg-primary hover:bg-yellow-500 transition duration-300">
+          Sign Up
+        </button>
+      </form>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div id="modal1" class="modal1 fixed inset-0 z-50  items-center justify-center hidden">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-8 relative">
+ 
+    <button id="close-form" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+  
+   
+
+    <!-- Login Form -->
+    <div id="login-form" class="block">
+      <h2 class="text-2xl font-bold mb-4">Enquire Now</h2>
+      <form>
+        <div class="mb-4">
+          <label class="block text-gray-700">Name</label>
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your Name" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Phone Number *</label>
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your phone number" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Address</label>
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your address" />
+        </div>
+        <button type="submit" class="w-full bg-gold text-white px-4 py-2 rounded-md shadow-lg bg-primary hover:bg-yellow-500 transition duration-300">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+    
+  </div>
+
+
+
+
+<script>
+  
+  const modalform=document.getElementById('modal1')
+ 
+  const closeModalform = document.getElementById('close-form');
+  const openpopup = document.getElementById('open-popup')
+  const openpopup1 = document.getElementById('open-popup1')
+  const modal = document.getElementById('modal');
+  const modalBg = document.getElementById('modal-background');
+  const openModal = document.getElementById('open-modal');
+  const openModalMob=document.getElementById('open-modal-mob')
+  const closeModal = document.getElementById('close-modal');
+  const loginTab = document.getElementById('login-tab');
+  const signupTab = document.getElementById('signup-tab');
+  const loginForm = document.getElementById('login-form');
+  const signupForm = document.getElementById('signup-form');
+  openpopup.addEventListener('click', () => {
+    modalform.classList.remove('hidden');
+    modalform.classList.add('flex');
+    modalBg.classList.remove('hidden');
+  });
+  const enquire1 = document.getElementById('enquire1')
+enquire1.addEventListener('click', () => {
+  modalform.classList.remove('hidden');
+  modalform.classList.add('flex');
+  modalBg.classList.remove('hidden');
+});
+
+  openpopup1.addEventListener('click', () => {
+    modalform.classList.remove('hidden');
+    modalform.classList.add('flex');
+    modalBg.classList.remove('hidden');
+  });
+  
+  closeModalform.addEventListener('click', () => {
+    modalform.classList.add('hidden');
+    modalBg.classList.add('hidden');
+  });
+  
+  openModalMob.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    modalBg.classList.remove('hidden');
+  });
+  
+  openModal.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    modalBg.classList.remove('hidden');
+  });
+  
+  
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modalBg.classList.add('hidden');
+  });
+  
+  
+  loginTab.addEventListener('click', () => {
+    loginForm.classList.remove('hidden');
+    signupForm.classList.add('hidden');
+    loginTab.classList.add('bg-yellow-500', 'text-white');
+    loginTab.classList.remove('bg-yellow-200')
+    signupTab.classList.remove('bg-yellow-500', 'text-white');
+    signupTab.classList.add('bg-yellow-200', 'text-gray-800');
+  });
+  
+  
+  signupTab.addEventListener('click', () => {
+    signupForm.classList.remove('hidden');
+    loginForm.classList.add('hidden');
+    signupTab.classList.add('bg-yellow-500', 'text-white');
+    signupTab.classList.remove('bg-yellow-200')
+    loginTab.classList.remove('bg-yellow-500', 'text-white');
+    loginTab.classList.add('bg-yellow-200', 'text-gray-800');
+  });
+  
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarTogglec = document.getElementById('navbar-toggle-c')
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    navbarToggle.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('menu-closed')) {
+        mobileMenu.classList.remove('menu-closed');
+        mobileMenu.classList.add('menu-open');
+      } else {
+        mobileMenu.classList.remove('menu-open');
+        mobileMenu.classList.add('menu-closed');
+      }
+    });
+  
+  
+    navbarTogglec.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('menu-closed')) {
+        mobileMenu.classList.remove('menu-closed');
+        mobileMenu.classList.add('menu-open');
+      } else {
+        mobileMenu.classList.remove('menu-open');
+        mobileMenu.classList.add('menu-closed');
+      }
+    });
+  </script>
+</body>
+</html>
