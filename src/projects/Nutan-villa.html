@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="icon" href="./img/logo.png">
-
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
   <title>Nutan Housing - Home</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Guerrilla&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   
-  <link href="../css/output.css" rel="stylesheet" />
+  <link href="../../css/output.css" rel="stylesheet" />
   <style>
     .menu-open {
       display: block;
@@ -28,9 +29,9 @@
     .transition-menu {
       transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
- 
-    /* Modal container (hidden by default) */
-    .modal {
+
+
+    .imagemodal {
       display: none;
       position: fixed;
       z-index: 1000;
@@ -50,7 +51,7 @@
     }
 
     /* Close button */
-    .close {
+    .closeimg {
       position: absolute;
       top: 20px;
       right: 20px;
@@ -69,20 +70,20 @@
 		<!-- Logo -->
     <div class=" md:order-1 flex">
 			<!-- Heroicon - Chip Outline -->
-      <a href="../index.html">	<img src="./img/logo.png" class="md:w-20 md:h-12 w-18 h-10 " ></a>
+      <a href="../index.html">	<img src="../img/logo.png" class="md:w-20 md:h-12 w-18 h-10" ></a>
    
-      <a href="../index.html"><h1 class="text-lg lg:text-2xl ml-2 mt-[5px] font-bold text-primary font-ubuntu">NUTAN HOUSING FINANCE</h1></a> 
+      <a href="../index.html"> <h1 class="text-lg lg:text-2xl ml-2 mt-[5px] font-bold text-primary font-ubuntu">NUTAN HOUSING FINANCE</h1></a>
     </div>
 		<div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
 			<ul class=" hidden lg:flex font-semibold justify-between">
                
-				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../index.html">Home</a></li>
-        <li class="md:px-4 md:py-2 hover:text-secondary"><a href="about.html">About Us</a></li>
-				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="projects.html">Projects</a></li>
-				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="career.html">Career</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../../index.html">Home</a></li>
+        <li class="md:px-4 md:py-2 hover:text-secondary"><a href="../about.html">About Us</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../projects.html">Projects</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../career.html">Career</a></li>
        
-        <li class="md:px-4 md:py-2 text-primary"><a href="blog.html">Blog</a></li>
-				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="contact.html">Contact Us</a></li>
+        <li class="md:px-4 md:py-2 hover:text-secondary"><a href="../blog.html">Blog</a></li>
+				<li class="md:px-4 md:py-2 hover:text-secondary"><a href="../contact.html">Contact Us</a></li>
        
 			</ul>
 		</div>
@@ -114,13 +115,13 @@
     <i class="material-icons focus:outline-non" id="navbar-toggle-c">close</i></button>
   </div>
     <ul class="space-y-8">
-      <li><a href="../index.html" class="block text-primary ">Home</a></li>
-      <li><a href="about.html" class="block text-primary ">About Us</a></li>
-      <li><a href="projects.html" class="block text-primary">Projects</a></li>
-      <li><a href="career.html" class="block  text-primary ">Career</a></li>
+      <li><a href="../../index.html" class="block text-primary ">Home</a></li>
+      <li><a href="../about.html" class="block text-primary ">About Us</a></li>
+      <li><a href="../projects.html" class="block text-primary">Projects</a></li>
+      <li><a href="../career.html" class="block  text-primary ">Career</a></li>
   
-      <li><a href="blog.html" class="block  text-black">Blog</a></li>
-      <li><a href="contact.html" class="block text-primary ">Contact Us</a></li>
+      <li><a href="../blog.html" class="block  text-primary">Blog</a></li>
+      <li><a href="../contact.html" class="block text-primary ">Contact Us</a></li>
    
       
       <li><button id="open-modal-mob" class="px-4 mx-1/2 py-2 bg-primary hover:bg-secondary text-gray-50 rounded-xl  gap-2">
@@ -140,41 +141,264 @@
 
 
 
-  <main class=" mt-20">
+  <main class=" mt-24">
     <div>
-      <img src="./img/blog.jpg" class=" w-full mb-10 object-cover">
+      <img src="../img/plot11.jpg" class=" w-full h-96 mb-10 object-cover">
     </div>
-    <h1 class="text-3xl text-primary font-poppins text-center font-bold mb-4">Our Blogs</h1>
-    <p class="text-lg text-center font-poppins">Your trusted partner in home financing, offering elegant solutions tailored to your needs.</p>
+   
+    <h1 class="text-3xl text-primary font-poppins text-center font-bold mb-4">Nutan Villa</h1>
+    
   
    
      
   
-  <div class="flex flex-col p-5 lg:px-48 lg:py-11">
+  <div class="flex flex-col p-10 ">
       <div class="bg-yellow-100 p-5 mb-10">
-          <h1 class="font-bold text-2xl mb-2 font-poppins">Why Buying a Home is Better Than Renting: A Simple Guide to Making the Right Choice</h1>
-          <p class="my-3 font-poppins">
+          <h1 class="font-bold text-2xl mb-2">About Rajgir</h1>
+          <p class="my-3 text-justify pr-4 flex">
            
-            In the age-old debate of buying versus renting, many people find themselves pondering which option is truly the best fit for their circumstances. While renting offers flexibility and immediate housing solutions, the long-term benefits of homeownership often make it the superior choice. Let's explore why buying a home is generally a better investment and lifestyle decision compared to renting, explained in straightforward terms.
+            Rajgir, located in Bihar's Nalanda district, is a historic and religious site with deep cultural significance in ancient India. It was a major center during the Maurya and Gupta empires and holds religious importance for Buddhism, Jainism, and Hinduism.
+
+        <br>
             
-         <a href="./blogs/blog1.html"><button class="text-yellow-500 font-semibold text-lg  hover:text-yellow-300 p-2 my-1 rounded">Read More...</button></a> 
+            Rajgir is especially important in Buddhism. The Griddhakuta Hill (Vulture Peak), where Buddha is said to have delivered many key sermons, is a major pilgrimage site. The Saptaparni Cave, the venue for the first Buddhist council, is another significant location for Buddhist followers.
+            In addition to its Buddhist heritage, Rajgir also holds significance for Jainism. Several Jain temples and monasteries are located here, making it an important pilgrimage site for Jain adherents.
+        <br>
+            Rajgir is renowned for its natural beauty. The hot springs, such as the Brahmakund, are famous for their therapeutic properties and attract both pilgrims and tourists. These thermal springs are considered sacred and are used for religious rituals and bathing.
+            
+            Historical Sites:
+            
+            Nearby Rajgir is the ancient university of Nalanda, a major center of learning+ in ancient India. The ruins of Nalanda provide insights into Buddhist education and ancient culture.
+            
+           <br>
+            
+            Cultural and Religious Projects: Recent years have seen increased investment in cultural and religious projects, including the construction of new temples, the enhancement of existing religious sites, and the promotion of festivals and events to attract tourists.
+            Sustainable Tourism: There is a growing focus on sustainable tourism to balance the preservation of Rajgir’s cultural heritage with modern development. Efforts are being made to ensure that tourism benefits the local economy while protecting the city's historical sites.
+            
+           <br>
+            Rajgir is being developed as a key tourist destination with plans for further infrastructure improvements, including better transport connectivity and hospitality services.
+            Heritage Conservation: Ongoing efforts are focused on conserving and restoring historical sites and promoting archaeological research to uncover and preserve Rajgir’s ancient heritage.
+<img src="../img/rajgir.jpg" class="relative w-auto ml-4 h-96">
+
+          </p>            
       </div>
      
       
   </div>
+  <!-- Overview Section -->
+  <section class=" bg-yellow-50">
+    <div class="container mx-auto flex flex-wrap items-center">
+     
+      <div class="w-full md:w-1/2 px-8">
+        <h2 class="text-3xl font-semibold text-gray-800">Premium NA Plots in Rajgir</h2>
+        <h3 class="text-xl text-gray-600 italic mt-2">A Perfect Blend of Nature and Urban Living</h3>
+        <p class="mt-4 text-gray-600">
+          Nutan Villa's area offers outstanding connectivity, making it an ideal location for development. It is conveniently located near major roads and highway, providing easy access to surrounding areas and key urban centers. Well-served by public transportation, including bus routes and railway lines, the site ensures effortless commuting. Additionally, its proximity to essential amenities such as schools, hospitals, and shopping centers enhances its appeal. Future infrastructure improvements in the area promise to further boost connectivity and property value.
+        </p>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Amenities</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Amenity 1 -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+          <img src="../img/temple.jpg" alt="24*7 Open Gym" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-lg font-semibold text-gray-700 text-center">Temple</h3>
+        </div>
+
+        <!-- Amenity 2 -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+          <img src="../img/hospital.jpg" alt="Multipurpose Court" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-lg font-semibold text-gray-700 text-center">Hosptal</h3>
+        </div>
+
+        <!-- Amenity 3 -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+          <img src="../img/market.jpg" alt="Gazebo" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-lg font-semibold text-gray-700 text-center">Market Place</h3>
+        </div>
+
+        <!-- Amenity 4 -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+          <img src="../img/kid.jpg" alt="Kids' Play Area" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-lg font-semibold text-gray-700 text-center">Kids' Play Area</h3>
+        </div>
+
+        <!-- Amenity 5 -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+          <img src="../img/water.jpg" alt="Jogging Track" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-lg font-semibold text-gray-700 text-center">Water Fountain</h3>
+        </div>
+
+        <!-- Amenity 6 -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+          <img src="../img/garden.jpg" alt="Recreation Area" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-lg font-semibold text-gray-700 text-center">Garden</h3>
+        </div>
+
+        <!-- Amenity 7 -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+          <img src="../img/school.jpg" alt="Swimming Pool" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-lg font-semibold text-gray-700 text-center">School</h3>
+        </div>
+
+        <!-- Amenity 8 -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+          <img src="../img/hall.jpg" alt="Community Hall" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-lg font-semibold text-gray-700 text-center">Community Hall</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Configuration Section -->
+  <section class="py-16 bg-yellow-100">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Project Configuration</h2>
+      <table class="table-auto w-full text-left bg-white shadow-lg rounded-lg">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th class="px-6 py-4">Type</th>
+            <th class="px-6 py-4">Area (Sq Ft)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-t px-6 py-4">Residential Plots</td>
+            <td class="border-t px-6 py-4">1200 to 3000 sq.ft.</td>
+          </tr>
+          <tr class="bg-yellow-50">
+            <td class="border-t px-6 py-4">Commercial Plots</td>
+            <td class="border-t px-6 py-4">2045 to 11,000 sq.ft.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Connectivity Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Connectivity</h2>
+      
+      <!-- Grid Layout for Connectivity -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        
+        <!-- Sorted Locations -->
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+          
+          <h3 class="text-xl font-semibold text-gray-700">K.K. University Phase H</h3>
+          <p class="text-gray-500 mt-2">0.5 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+         
+          <h3 class="text-xl font-semibold text-gray-700">Sports Academy</h3>
+          <p class="text-gray-500 mt-2">0.5 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+          
+          <h3 class="text-xl font-semibold text-gray-700">Police Training Center</h3>
+          <p class="text-gray-500 mt-2">5 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+         
+          <h3 class="text-xl font-semibold text-gray-700">IT City</h3>
+          <p class="text-gray-500 mt-2">5 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+          
+          <h3 class="text-xl font-semibold text-gray-700">Rajgir Film City</h3>
+          <p class="text-gray-500 mt-2">5 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+          
+          <h3 class="text-xl font-semibold text-gray-700">CRPF Camp Rajgir</h3>
+          <p class="text-gray-500 mt-2">7 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+         
+          <h3 class="text-xl font-semibold text-gray-700">Jeathiyan</h3>
+          <p class="text-gray-500 mt-2">8 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+          
+          <h3 class="text-xl font-semibold text-gray-700">International Cricket Stadium</h3>
+          <p class="text-gray-500 mt-2">8 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+         
+          <h3 class="text-xl font-semibold text-gray-700">Rajgir Bus Stand</h3>
+          <p class="text-gray-500 mt-2">12 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+         
+          <h3 class="text-xl font-semibold text-gray-700">Rajgir Railway Station</h3>
+          <p class="text-gray-500 mt-2">11 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+         
+          <h3 class="text-xl font-semibold text-gray-700">Brahma Kund</h3>
+          <p class="text-gray-500 mt-2">11 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+         
+          <h3 class="text-xl font-semibold text-gray-700">Venu Van</h3>
+          <p class="text-gray-500 mt-2">11 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+          
+          <h3 class="text-xl font-semibold text-gray-700">Rajgir Ropeway & Shanti Stupa</h3>
+          <p class="text-gray-500 mt-2">11 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+         
+          <h3 class="text-xl font-semibold text-gray-700">Ghora Katora</h3>
+          <p class="text-gray-500 mt-2">13 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+          
+          <h3 class="text-xl font-semibold text-gray-700">Ordnance Factory</h3>
+          <p class="text-gray-500 mt-2">15 km</p>
+        </div>
+
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md text-center">
+         
+          <h3 class="text-xl font-semibold text-gray-700">Sone Bhandar</h3>
+          <p class="text-gray-500 mt-2">10 km</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   
-
-
-  </main>
-
   <div class="bg-yellow-100  p-4">
     <h1 class="text-primary text-center text-3xl font-poppins font-bold p-6 ">Gallery</h1>
     <div >
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-8">
- 
+  
         <div class="group cursor-pointer relative">
           <img
-            src="./img/pic.jpeg"
+            src="../img/pic.jpeg"
             alt="Image 1"
             onclick="openModali(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
@@ -184,7 +408,7 @@
        
         <div class="group cursor-pointer relative">
           <img
-            src="./img/pic1.jpeg"
+            src="../img/pic1.jpeg"
             alt="Image 1"
             onclick="openModali(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
@@ -194,7 +418,7 @@
        
         <div class="group cursor-pointer relative">
           <img
-            src="./img/pic4.jpeg"
+            src="../img/pic4.jpeg"
             alt="Image 1"
             onclick="openModali(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
@@ -204,7 +428,7 @@
        
         <div class="group cursor-pointer relative">
           <img
-            src="./img/pic3.jpeg"
+            src="../img/pic3.jpeg"
             alt="Image 1"
             onclick="openModali(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
@@ -213,7 +437,7 @@
         </div>
         <div class="group cursor-pointer relative">
           <img
-            src="./img/pic5.jpeg"
+            src="../img/pic5.jpeg"
             alt="Image 1"
             onclick="openModali(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
@@ -222,7 +446,7 @@
         </div>
         <div class="group cursor-pointer relative">
           <img
-            src="./img/pic6.jpeg"
+            src="../img/pic6.jpeg"
             alt="Image 1"
             onclick="openModali(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
@@ -240,7 +464,7 @@
        
         <div class="group cursor-pointer relative">
           <img
-            src="./img/pic2.jpeg"
+            src="../img/pic2.jpeg"
             alt="Image 1"
             onclick="openModali(this.src)"
             class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
@@ -265,117 +489,114 @@
       
     </div>
   </div>
+  
+  
 
-
-
-  <div id="imageModal" class="imageModal flex">
-    <span class="close" onclick="closeModali()">&times;</span>
+  <div id="imageModal" class="imagemodal flex">
+    <span class="closeimg" onclick="closeModali()">&times;</span>
     <img class="modal-content" id="modalImage">
   </div>
 
 
+  </main>
 
+ 
 
   <footer class="w-full bg-black">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
         <!--Grid-->
-        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 pt-10 max-w-xs mx-auto sm:max-w-2xl lg:max-w-full">
-            <div class="col-span-full lg:mb-10 max-lg:border-b max-lg:pb-8 lg:border-r  border-gray-500 lg:col-span-2 lg:max-w-xs">
-                <a href="../index.html"  class="flex justify-center mb-12 lg:justify-start text-gray-100">
-                    <img src="./img/logo.png" class="w-16 h-8"><span class="text-xl">Nutan Housing Finance</span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 py-10 max-w-xs mx-auto sm:max-w-2xl lg:max-w-full">
+            <div class="col-span-full lg:mb-10 max-lg:border-b max-lg:pb-8 lg:border-r border-gray-200 lg:col-span-2 lg:max-w-xs">
+                <a href="../../index.html"  class="flex justify-center mb-12 lg:justify-start text-gray-100">
+                    <img src="../img/logo.png" class="w-18 h-10"><span class="text-xl">Nutan Housing Finance</span>
                 </a>
                 <ul class="grid gap-5">
                     <li class="flex items-center justify-center gap-2 lg:justify-start text-gray-400">
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.87798 3.83594L6.80031 7.08201C8.55849 8.13692 9.43758 8.66437 10.4034 8.64139C11.3693 8.6184 12.2223 8.04973 13.9283 6.91239L18.1246 3.83594M8.33464 14.6693H11.668C14.8107 14.6693 16.382 14.6693 17.3583 13.693C18.3346 12.7166 18.3346 11.1453 18.3346 8.0026C18.3346 4.85991 18.3346 3.28856 17.3583 2.31225C16.382 1.33594 14.8107 1.33594 11.668 1.33594H8.33464C5.19194 1.33594 3.62059 1.33594 2.64428 2.31225C1.66797 3.28856 1.66797 4.85991 1.66797 8.0026C1.66797 11.1453 1.66797 12.7166 2.64428 13.693C3.62059 14.6693 5.19194 14.6693 8.33464 14.6693Z" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round"/>
                             </svg>
-                          <a href="mailto:info@nutanhousing.com"> info@nutanhousing.com</a>
+                            info@nutanhousing.com
                     </li>
                     <li class="flex items-center justify-center gap-2 lg:justify-start text-gray-400">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.9655 12.6929C15.672 12.5811 15.5252 12.5251 15.3708 12.5118C15.2164 12.4984 15.0622 12.5283 14.7538 12.5881L12.3984 13.0445C12.0235 13.1172 11.836 13.1535 11.6427 13.1227C11.4493 13.0918 11.2957 13.0064 10.9886 12.8356C9.07557 11.7718 7.78657 10.5439 6.95042 8.81181C6.827 8.55614 6.76529 8.4283 6.74183 8.25256C6.71837 8.07683 6.74863 7.91452 6.80915 7.5899L7.27298 5.1021C7.32932 4.79993 7.35749 4.64884 7.3442 4.49766C7.33092 4.34649 7.27683 4.20263 7.16866 3.91491L6.61323 2.43758C6.35178 1.74217 6.22105 1.39447 5.93618 1.19723C5.65132 1 5.27985 1 4.53692 1H2.68622C1.66783 1 0.866113 1.84144 1.01869 2.8481C1.39788 5.36068 2.51739 9.91727 5.78835 13.1882C9.22363 16.6235 14.172 18.1141 16.895 18.7072C17.9468 18.9357 18.8794 18.1159 18.8794 17.0388V15.3317C18.8794 14.592 18.8794 14.2222 18.6836 13.938C18.4877 13.6538 18.1421 13.5222 17.4509 13.2588L15.9655 12.6929Z" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <a href="tel:+91 9471613137">+91 9471613137</a>
-                            
-                            <a href="tel:+91 8539804930">+91 8539804930</a> 
+                            9471613137, 8539804930
                     </li>
                     <li class="flex items-center justify-center gap-2 lg:justify-start text-gray-400">
                         <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.6654 8.60868C14.6654 11.8081 12.1279 14.3862 10.184 16.6526C9.22437 17.7713 8.74457 18.3307 7.9987 18.3307C7.25282 18.3307 6.77302 17.7713 5.81342 16.6526C3.86945 14.3862 1.33203 11.8081 1.33203 8.60868C1.33203 6.76685 2.03441 5.00046 3.28465 3.69809C4.5349 2.39573 6.23059 1.66406 7.9987 1.66406C9.76681 1.66406 11.4625 2.39573 12.7127 3.69809C13.963 5.00046 14.6654 6.76685 14.6654 8.60868Z" stroke="#4F46E5" stroke-width="1.6"/>
                             <path d="M9.66536 7.7406C9.66536 8.69945 8.91917 9.47676 7.9987 9.47676C7.07822 9.47676 6.33203 8.69945 6.33203 7.7406C6.33203 6.78175 7.07822 6.00445 7.9987 6.00445C8.91917 6.00445 9.66536 6.78175 9.66536 7.7406Z" stroke="#4F46E5" stroke-width="1.6"/>
                             </svg>
-                            Jhunki Baba Road, Patel Nagar,<br> Near RDH School, Rajgir, 803121
+                            jhunki Baba Road, Patel Nagar Near RDH School, Rajgir, 803121
                     </li>
                 </ul>
             </div>
             <!--End Col-->
             <div class="lg:mx-auto text-left ">
-                <h4 class="text-lg text-gray-400 font-medium mb-7">Quick Links</h4>
+                <h4 class="text-lg text-gray-400 font-medium mb-7">Nutan Housing Finance</h4>
                 <ul class="text-sm  transition-all duration-500">
-                    <li class="mb-6"><a href="../index.html"   class="text-gray-500 hover:text-gray-700">Home</a></li>
-                    <li class="mb-6"><a href="./blog.html"  class=" text-gray-500 hover:text-gray-700">Gallery</a></li>
-                    <li class="mb-6"><a href="./emi_calc.html"  class=" text-gray-500 hover:text-gray-700">EMI calculator</a></li>
-                    <li ><a href="./career.html"  class=" text-gray-500 hover:text-gray-700">Become an Advisor</a></li>
+                    <li class="mb-6"><a href="../../index.html"  class="text-gray-500 hover:text-gray-700">Home</a></li>
+                    <li class="mb-6"><a href="../about.html"  class=" text-gray-500 hover:text-gray-700">About</a></li>
+                    <li class="mb-6"><a href="../emi_calc.html"  class=" text-gray-500 hover:text-gray-700">Emi calcilator</a></li>
+                    <li><a href="../career.html"  class=" text-gray-500 hover:text-gray-700">Become an advisor</a></li>
                 </ul>
             </div>
-   
+            <!--End Col-->
+            
+            <!--End Col-->
+           
+            <!--End Col-->
             <div class="lg:mx-auto text-left ">
                 <h4 class="text-lg text-gray-400 font-medium mb-7">Support</h4>
                 <ul class="text-sm  transition-all duration-500">
-                  <li class="mb-6" ><button  id="enquire1" class=" text-gray-500  hover:text-gray-700">Enquire Now</button></li>
-                    <li class="mb-6"><a href="./contact.html"  class="text-gray-500 hover:text-gray-700">Customer Support</a></li>
-                    <li class="mb-6" ><a href="javascript:;"  class=" text-gray-500 hover:text-gray-700">Privacy & Policy</a></li>
-                    <li id=""><a href="javascript:;"  class=" text-gray-500 hover:text-gray-700">Terms & Conditions</a></li>
+                  <li class="mb-6"><button  id="enquire1" class=" text-gray-500  hover:text-gray-700">Enquire Now</button></li>
+                    <li class="mb-6"><a href="../contact.html"  class="text-gray-500 hover:text-gray-700">Customer Support</a></li>
+                    
+                    <li ><a href="javascript:;"  class=" text-gray-500 hover:text-gray-700">Terms & Conditions</a></li>
                 </ul>
             </div>
 
 
             <div class="lg:mx-auto text-left ">
-              <h4 class="text-lg text-gray-400 font-medium mb-4">Follow Us On</h4>
+              <h4 class="text-lg text-gray-400 font-medium mb-7">Follow Us On</h4>
               <ul class="text-sm flex transition-all duration-500 gap-6">
-                  <li><a href="https://www.facebook.com/nutan.housing/"><img src="./img/face.png" class="w-6 h-6 md:w-10 md:h-10" alt=""></a></li>
-                  <li><a href="https://www.instagram.com/nutan.housing"><img src="./img/insta.png" class="w-6 h-6 md:w-10 md:h-10" alt=""></a></li>
-                  <li><a href="https://youtube.com/@nutanhousingfinance-l2x?si=Lt6UVWzoi52a7jZt"><img src="./img/you.png"  class="w-6 h-6 md:w-10 md:h-10" alt=""></a></li>
+                  <li><a href="https://www.facebook.com/nutan.housing/"><img src="../img/face.png" class="w-10 h-10" alt=""></a></li>
+                  <li><a href="https://www.instagram.com/nutan.housing"><img src="../img/insta.png" class="w-10 h-10" alt=""></a></li>
+                  <li><a href="https://youtube.com/@nutanhousingfinance-l2x?si=Lt6UVWzoi52a7jZt"><img src="../img/you.png"  class="w-10 h-10" alt=""></a></li>
               </ul>
           </div>
             <!--End Col-->
            
         </div>
         <!--Grid-->
-        <div class=" flex py-4 mt-4 md:gap-x-96 border-t border-gray-500">
-            <div class="flex items-center md:ml-28 justify-start ">
-                <span class="text-sm text-gray-500 ">©<a href=""> Nutan Housing Finance</a> 2024, All rights reserved.</span>
+        <div class="py-7 border-t border-gray-200">
+            <div class="flex items-center justify-center ">
+                <span class="text-sm text-gray-500 ">©<a href="">Nutan Housing Finance</a> 2024, All rights reserved.</span>
            
             </div>
-            <div class=" justify-end items-end">
-              <span class="text-sm text-gray-500 "> Develop by parchar.co.in</span>
-            </div>
-          </div>
-      
+        </div>
     </div>
 </footer>
-
 
 
   <div class="fixed bottom-5 right-5 flex flex-col space-y-3 z-50">
     <!-- WhatsApp Button -->
     <button id="open-popup1" class=" md:hidden">
-      <img src="./img/enquirenow.jpeg" class="w-14 h-14 animate-pulse">
+      <img src="../img/enquirenow.jpeg" class="w-14 h-14 animate-pulse">
      </button>
     <a href="https://wa.me/+918539804930" target="_blank" class="bg-green-500 p-2 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
-      <img src="./img/whatsapp.png" class="w-10 h-10 animate-pulse">
+     <img src="../img/whatsapp.png" class="w-10 h-10">
     </a>
   
     <!-- Call Button -->
     <a href="tel:+91 9471613137" class="  rounded-full hover:scale-105 shadow-lg  transition duration-300">
-      <img src="./img/call.png" class="w-14 h-14 ">
+      <img src="../img/call.png" class="w-14 h-14 ">
     </a>
   </div>
 <!-- model -->
 <div id="modal-background" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
-
-
-<div id="modal" class="modal fixed inset-0 z-50  items-center justify-center flex">
+<div id="modal" class="modal fixed inset-0 z-50  items-center justify-center hidden">
   <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-8 relative">
     <!-- Close Button -->
     <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800">
@@ -407,6 +628,22 @@
           Login
         </button>
       </form>
+      <div class="mt-2" >
+        <h1 class="text-center ">or</h1>
+      <div id="g_id_onload"
+           data-client_id="YOUR_CLIENT_ID.apps.googleusercontent.com"
+           data-callback="handleCredentialResponse">
+      </div>
+      <div class="g_id_signin" data-type="standard"></div>
+  
+      <script>
+          function handleCredentialResponse(response) {
+              const data = jwt_decode(response.credential);
+              console.log(data);
+              // Send data to your server
+          }
+      </script>
+      </div>
     </div>
 
     <!-- Signup Form (hidden initially) -->
@@ -415,7 +652,7 @@
       <form>
         <div class="mb-4">
           <label class="block text-gray-700">Name*</label>
-          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your name" />
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your Name" />
         </div>
         <div class="mb-4">
           <label class="block text-gray-700">Email*</label>
@@ -443,10 +680,10 @@
           Sign Up
         </button>
       </form>
+      </form>
     </div>
   </div>
 </div>
-
 
 
 <div id="modal1" class="modal1 fixed inset-0 z-50  items-center justify-center hidden">
@@ -467,7 +704,7 @@
       <form>
         <div class="mb-4">
           <label class="block text-gray-700">Name</label>
-          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your name" />
+          <input type="text" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Enter your Name" />
         </div>
         <div class="mb-4">
           <label class="block text-gray-700">Phone Number *</label>
@@ -487,7 +724,10 @@
   </div>
 
 
+
+
 <script>
+  
   const modalform=document.getElementById('modal1')
  
   const closeModalform = document.getElementById('close-form');
@@ -502,14 +742,18 @@
   const signupTab = document.getElementById('signup-tab');
   const loginForm = document.getElementById('login-form');
   const signupForm = document.getElementById('signup-form');
-
-
   openpopup.addEventListener('click', () => {
     modalform.classList.remove('hidden');
     modalform.classList.add('flex');
     modalBg.classList.remove('hidden');
   });
-  
+  const enquire1 = document.getElementById('enquire1')
+enquire1.addEventListener('click', () => {
+  modalform.classList.remove('hidden');
+  modalform.classList.add('flex');
+  modalBg.classList.remove('hidden');
+});
+
   openpopup1.addEventListener('click', () => {
     modalform.classList.remove('hidden');
     modalform.classList.add('flex');
@@ -583,6 +827,8 @@
         mobileMenu.classList.add('menu-closed');
       }
     });
+
+
 
     function openModali(src) {
       const modali = document.getElementById('imageModal');
