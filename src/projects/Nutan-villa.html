@@ -29,7 +29,29 @@
     .transition-menu {
       transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
+    .slider-container {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+  }
 
+  .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+      min-width: 100%;
+      transition: opacity 0.5s ease-in-out;
+  }
+
+  .fade-out {
+      opacity: 0;
+  }
+
+  .fade-in {
+      opacity: 1;
+  }
 
     .imagemodal {
       display: none;
@@ -179,18 +201,39 @@
             <h1 class="font-semibold text-lg mt-4 mb-2">  Modern Developments:</h1>
 
 Cultural and Religious Projects: Recent years have seen increased investment in cultural and religious projects, including the construction of new temples, the enhancement of existing religious sites, and the promotion of festivals and events to attract tourists.
-Sustainable Tourism: There is a growing focus on sustainable tourism to balance the preservation of Rajgir’s cultural heritage with modern development. Efforts are being made to ensure that tourism benefits the local economy while protecting the city's historical sites.
+<br>Sustainable Tourism: There is a growing focus on sustainable tourism to balance the preservation of Rajgir’s cultural heritage with modern development. Efforts are being made to ensure that tourism benefits the local economy while protecting the city's historical sites.
 
 <h1 class="font-semibold text-lg mt-4 mb-2">Economic Growth: </h1>
 Rajgir is being developed as a key tourist destination with plans for further infrastructure improvements, including better transport connectivity and hospitality services.
-Heritage Conservation: Ongoing efforts are focused on conserving and restoring historical sites and promoting archaeological research to uncover and preserve Rajgir’s ancient heritage.</span>
-          </p>     
+Heritage Conservation: Ongoing efforts are focused on conserving and restoring historical sites and promoting archaeological research to uncover and preserve Rajgir’s ancient heritage.
+<br><br>
+And many more Government project coming to Rajgir....
+</span>
+
+
+</p>     
           <button id="toggleButton" onclick="toggleText()" class=" inline-block text-primary  py-2 rounded hover:text-blue-700">
             Know More...
           </button>
           </div>       
-          <div>
-          <img src="../img/rajgir.jpg" class="rounded-xl relative w-auto md:ml-4 h-auto">
+          <div class="slider-container max-w-2xl ml-4">
+            <div id="slider" class="slider">
+                <div class="slide">
+                    <img src="../img/rajgir.jpg" class="w-full rounded-xl" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="../img/jungle.jpg" class="w-full rounded-xl" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="../img/glass.png" class="w-full rounded-xl" alt="Image 3">
+                </div>
+                <div class="slide">
+                  <img src="../img/roap.jpg" class="w-full rounded-xl" alt="Image 4">
+              </div>
+              <div class="slide">
+                <img src="../img/kund.jpg" class="w-full rounded-xl" alt="Image 5">
+            </div>
+            </div>
         </div>
       </div>
       </div>
@@ -202,7 +245,7 @@ Heritage Conservation: Ongoing efforts are focused on conserving and restoring h
     <div class="container mx-auto flex flex-wrap items-center">
      
       <div class="w-full md:w-1/2 px-8">
-        <h2 class="text-3xl font-semibold text-gray-800">Premium Plots in Rajgir</h2>
+        <h2 class="text-3xl font-semibold text-primary">Premium Plots in Rajgir</h2>
         <h3 class="text-xl text-gray-600 italic mt-2">A Perfect Blend of Nature and Urban Living</h3>
         <p class="mt-4 text-gray-600">
           Nutan Villa's area offers outstanding connectivity, making it an ideal location for development. It is conveniently located near major roads and highway, providing easy access to surrounding areas and key urban centers. Well-served by public transportation, including bus routes and railway lines, the site ensures effortless commuting. Additionally, its proximity to essential amenities such as schools, hospitals, and shopping centers enhances its appeal. Future infrastructure improvements in the area promise to further boost connectivity and property value.
@@ -217,7 +260,7 @@ Heritage Conservation: Ongoing efforts are focused on conserving and restoring h
   <!-- Amenities Section -->
   <section class="py-16 bg-white">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Amenities</h2>
+      <h2 class="text-3xl font-bold text-primary text-center mb-10">Amenities</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         <!-- Amenity 1 -->
         <div class="bg-yellow-50 p-4 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
@@ -273,7 +316,7 @@ Heritage Conservation: Ongoing efforts are focused on conserving and restoring h
   <!-- Project Configuration Section -->
   <section class="py-16 bg-yellow-100">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Project Configuration</h2>
+      <h2 class="text-3xl font-bold text-primary text-center mb-10">Project Configuration</h2>
       <table class="table-auto w-full text-left bg-white shadow-lg rounded-lg">
         <thead class="bg-primary text-white">
           <tr>
@@ -284,7 +327,7 @@ Heritage Conservation: Ongoing efforts are focused on conserving and restoring h
         <tbody>
           <tr>
             <td class="border-t px-6 py-4">Residential Plots</td>
-            <td class="border-t px-6 py-4">1200 to 3000 sq.ft.</td>
+            <td class="border-t px-6 py-4">900 to 2500 sq.ft.</td>
           </tr>
           <tr class="bg-yellow-50">
             <td class="border-t px-6 py-4">Commercial Plots</td>
@@ -298,7 +341,7 @@ Heritage Conservation: Ongoing efforts are focused on conserving and restoring h
   <!-- Connectivity Section -->
   <section class="py-16 bg-white">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Connectivity</h2>
+      <h2 class="text-3xl font-bold text-primary text-center mb-10">Connectivity</h2>
       
       <!-- Grid Layout for Connectivity -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -872,6 +915,29 @@ enquire1.addEventListener('click', () => {
         toggleButton.textContent = "Know More";
       }
     }
+
+
+
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const slider = document.getElementById('slider');
+
+    function showSlide(index) {
+        const translateXValue = -index * 100; // Calculate how much to translate the slider
+        slider.style.transform = `translateX(${translateXValue}%)`;
+    }
+
+    function autoSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    // Start with the first slide
+    showSlide(currentIndex);
+
+    // Change slide every 3 seconds
+    setInterval(autoSlide, 3000);
   </script>
 </body>
 </html>
